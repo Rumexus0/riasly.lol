@@ -1,0 +1,66 @@
+# riasly — structured bug report. Fields map to what a maintainer actually needs to
+# reproduce: environment (the app needs Node >= 22.9 and a MySQL 8), the exact steps,
+# and expected vs actual. Secrets are called out because the repro often involves env.
+name: Bug report
+description: Report something that does not work as documented
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing. Before you submit: search existing issues, and check the
+        README "Known limitations" section — some behavior is intentional.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear, concise description of the bug.
+      placeholder: Uploading a .gif avatar returns 415 even though GIFs are allowed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Exact steps from a fresh clone. Include the file/route involved.
+      value: |
+        1. npm run dev
+        2. Sign in / open ...
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What the docs or the UI imply should happen instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: Version and OS. Do NOT paste .env contents or any secret/token.
+      value: |
+        - Node: (run `node -v`)
+        - OS:
+        - Browser (if UI):
+        - Deploy: local dev / Vercel / other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submit checks
+      options:
+        - label: I reproduced this on a current checkout of `main`.
+          required: true
+        - label: I removed every secret (DB URL, AUTH_SECRET, tokens) from the text.
+          required: true
+        - label: This is a bug, not a security report (those go through SECURITY.md).
+          required: true

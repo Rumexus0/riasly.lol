@@ -1,0 +1,88 @@
+# riasly — CI. One job that reproduces the exact local gate list a contributor runs,
+# so a green check here means the same thing as a green local `npm run build`.
+# Order mirrors CONTRIBUTING: i18n parity -> lint -> unit -> types -> templates ->
+# build. Steps 1-6 are blocking; the final audit is advisory (see its comment).
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Cancel a superseded run on the same PR/branch instead of burning two runners.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    # A real MySQL 8 so `prisma db push` catches schema drift and the build can
+    # prerender the DB-backed routes. The repo ships no prisma/migrations — the
+    # workflow is `db push` (README documents the same discipline).
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: ci-root-password
+          MYSQL_DATABASE: riaslylol
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -pci-root-password"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+
+    env:
+      # Matches the .env.example local default so the same DATABASE_URL string
+      # works in CI and in a dev clone; only the password differs and it is a
+      # throwaway value scoped to the ephemeral service container.
+      DATABASE_URL: mysql://root:ci-root-password@127.0.0.1:3306/riaslylol
+      AUTH_SECRET: ci-only-secret-not-used-for-anything-real
+      AUTH_URL: http://localhost:3000
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      # postinstall already runs `prisma generate`, so no separate generate step.
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply schema (fails on Prisma/DB drift)
+        run: npx prisma db push --skip-generate
+
+      - name: i18n parity (EN/TR leaf check)
+        run: npm run check:i18n
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm run test
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # build-templates.mjs runs with no DB and no Prisma client; it validates the
+      # committed template facts table. Kept DB-free on purpose (tests/architecture).
+      - name: Verify templates
+        run: npm run templates:verify
+
+      - name: Build
+        run: npm run build
+
+      # Advisory only. next@15 -> 16 and the next-auth beta are deliberately held
+      # back (see SECURITY.md "Known issues"), so some advisories here are known and
+      # accepted; a future major bump is a human decision, not a build blocker.
+      - name: Audit production deps (non-blocking)
+        continue-on-error: true
+        run: npm audit --omit=dev

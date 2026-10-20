@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="riasly">
+  <!-- riasly brand mark: the brilliant-cut gem from components/Logo.tsx, drawn
+       fill-only so it stays a crisp vector favicon at any tile size with no
+       external CSS. The gradient mirrors tailwind's `brandgrad` stops. -->
+  <defs>
+    <linearGradient id="riasly-gem" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6" />
+      <stop offset="0.55" stop-color="#D946EF" />
+      <stop offset="1" stop-color="#22D3EE" />
+    </linearGradient>
+  </defs>
+  <path d="M7 3h10l4 6-9 12L3 9l4-6z" fill="url(#riasly-gem)" />
+  <path d="M7 3h10l-2.2 6H9.2L7 3z" fill="#ffffff" fill-opacity="0.3" />
+</svg>

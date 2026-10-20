@@ -1,0 +1,20 @@
+# riasly — dependency updates. Deliberately conservative: the maintainers chose to
+# apply only safe (non-breaking) bumps by hand and to let majors be a human decision
+# (see the plan / SECURITY.md), so Dependabot must NOT spam major version PRs.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    # Only patch and minor ever open a PR; a `next@15 -> 16`-style major stays a
+    # manual call rather than an auto-generated PR that would break the build gate.
+    minimum-update-period: minor
+    open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5

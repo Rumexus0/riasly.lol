@@ -1,0 +1,1107 @@
+{
+  "common": {
+    "appName": "riasly",
+    "tagline": "Everything you want, right here."
+  },
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "login": "Login",
+    "signup": "Sign Up for Free",
+    "dashboard": "Dashboard",
+    "logout": "Log out",
+    "openMenu": "Toggle menu"
+  },
+  "hero": {
+    "promo": "New · Lifetime Premium is here",
+    "titleLine1": "Everything you want,",
+    "titleLine2": "right here.",
+    "subtitle": "riasly gives creators and gamers a stunning, fully customizable link-in-bio page and fast, secure file hosting — all behind one clean handle.",
+    "signUpFree": "Sign Up for Free",
+    "viewPricing": "View Pricing",
+    "dashboardPreview": "riasly dashboard preview",
+    "profilePreview": "Finished riasly profile page preview"
+  },
+  "features": {
+    "eyebrow": "Two products. One handle.",
+    "title": "Built for the way creators actually share",
+    "items": [
+      {
+        "title": "Customizable link-in-bio pages",
+        "description": "Build a beautiful, fully themed profile in minutes. Custom domains, animations, music, and endless styling — no code required."
+      },
+      {
+        "title": "Fast, secure file hosting",
+        "description": "Upload and share files on a global edge network. Private links, password protection, and blazing download speeds by default."
+      }
+    ]
+  },
+  "stats": {
+    "labels": {
+      "profileViews": "Profile views",
+      "users": "Users",
+      "fileUploads": "File uploads",
+      "subscribers": "Subscribers"
+    },
+    "live": "Live now"
+  },
+  "claim": {
+    "title": "Claim your handle",
+    "subtitle": "Grab your riasly link before someone else does. It takes seconds.",
+    "prefix": "riasly/",
+    "placeholder": "yourname",
+    "submit": "Claim Now",
+    "ariaLabel": "Choose your riasly handle",
+    "empty": "Pick a handle to continue.",
+    "invalid": "Use 3–30 characters: lowercase letters, numbers, and hyphens (not first or last).",
+    "checking": "Checking availability…",
+    "available": "Great — it's available.",
+    "taken": "Sorry, that handle is already taken.",
+    "rateLimited": "Too many checks. Try again in a minute.",
+    "success": "Nice — riasly/{handle} is ready. Create your free account to finish.",
+    "errorNetwork": "Couldn't check availability. Try again."
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Start free. Go lifetime when you're ready.",
+    "subtitle": "No subscriptions. Premium is a single payment for life.",
+    "popular": "Most Popular",
+    "plans": [
+      {
+        "name": "Free",
+        "price": "$0",
+        "priceNote": "forever",
+        "tagline": "Everything you need to launch your page.",
+        "cta": "Sign Up for Free",
+        "features": [
+          "One link-in-bio profile",
+          "Unlimited links",
+          "Core themes & customizer",
+          "5 GB file hosting",
+          "riasly/yourname handle",
+          "Community support"
+        ]
+      },
+      {
+        "name": "Premium",
+        "price": "$49",
+        "priceNote": "once · lifetime access",
+        "tagline": "Pay once, shine forever. No renewals, ever.",
+        "cta": "Get Premium for Life",
+        "features": [
+          "Everything in Free, plus:",
+          "Custom domains & full branding",
+          "Advanced animations & effects",
+          "Unlimited file hosting",
+          "Password-protected files",
+          "Priority speeds & analytics",
+          "Early access to new features"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions, answered",
+    "items": [
+      {
+        "question": "What is riasly?",
+        "answer": "riasly is a creator-first platform that pairs customizable link-in-bio profile pages with fast, secure file hosting — all behind one clean, memorable handle."
+      },
+      {
+        "question": "Is it free?",
+        "answer": "Yes. The Free plan lets you build a full profile and host files at no cost, forever. Premium unlocks lifetime extras like custom domains and unlimited hosting with a single payment."
+      },
+      {
+        "question": "Is it safe?",
+        "answer": "Absolutely. Files are served over an encrypted global edge network with private links and optional password protection. Your handle and content stay under your control."
+      },
+      {
+        "question": "How long does setup take?",
+        "answer": "Under two minutes. Sign up, claim your riasly/ handle, drop in your links, and publish. No code, no config, no waiting."
+      }
+    ]
+  },
+  "footer": {
+    "blurb": "Everything you want, right here. Link pages and file hosting built for creators and gamers.",
+    "language": "Language",
+    "product": "Product",
+    "resources": "Resources",
+    "rights": "© {year} riasly. All rights reserved.",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "statusOnline": "All systems operational",
+    "links": {
+      "signup": "Sign Up",
+      "login": "Login",
+      "pricing": "Pricing",
+      "redeem": "Redeem Code",
+      "help": "Help Center",
+      "changelog": "Changelog",
+      "leaderboard": "Leaderboard",
+      "status": "Status",
+      "recovery": "Recovery"
+    }
+  },
+  "auth": {
+    "signupTitle": "Create your riasly",
+    "signupSubtitle": "Claim your handle and launch your page in seconds.",
+    "loginTitle": "Welcome back",
+    "loginSubtitle": "Log in to manage your profile and files.",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "handle": "Handle",
+    "orContinueWith": "Or continue with",
+    "google": "Continue with Google",
+    "github": "Continue with GitHub",
+    "discord": "Continue with Discord",
+    "createAccount": "Create account",
+    "signIn": "Sign in",
+    "haveAccount": "Already have an account?",
+    "noAccount": "New to riasly?",
+    "forgotPassword": "Forgot your password?",
+    "invalidCredentials": "Invalid email or password.",
+    "staleSession": "Your previous session belonged to a removed account — sign in again.",
+    "emailTaken": "That email is already registered.",
+    "tooMany": "Too many signup attempts from this IP. Try again in an hour.",
+    "handleTaken": "That handle is taken. Pick another.",
+    "genericError": "Something went wrong. Please try again.",
+    "oauthNotLinked": "This email already belongs to an account created another way, so the provider was not attached to it automatically. Sign in the original way first, then connect the provider from your dashboard.",
+    "mfaCodeLabel": "Authentication code",
+    "mfaBack": "Use a different account",
+    "mfaHelp": "Enter the 6-digit code from your authenticator app, or one of your backup codes.",
+    "mfaEmailBtn": "Email me a code instead",
+    "mfaEmailSent": "A sign-in code was sent to your email.",
+    "mfaVerify": "Verify & sign in",
+    "verifyTitle": "Confirm your email",
+    "verifySubtitle": "We sent a 6-digit code to your address. Enter it to activate your riasly.",
+    "verifyEmailLabel": "Email address",
+    "verifySend": "Send code",
+    "verifyMailed": "If that address has an account waiting for confirmation, a code is on its way.",
+    "verifySent": "A new code is on its way.",
+    "verifyMailedTo": "A code was sent to",
+    "verifyCodeLabel": "6-digit code",
+    "verifyCodeHelp": "The code works once and expires in 24 hours.",
+    "verifySubmit": "Verify",
+    "verifyResend": "Send a new code",
+    "verifyOtherEmail": "Use a different address",
+    "verifySuccess": "Email confirmed — sign in.",
+    "verifyBadCode": "That code is wrong or has expired. Ask for a new one.",
+    "verifyInvalidEmail": "Enter a valid email address.",
+    "verifyOpen": "Open verification",
+    "tooManyVerify": "Too many codes requested from this IP. Try again in an hour.",
+    "emailNotVerified": "This email address has not been confirmed yet, so signing in is blocked.",
+    "emailFailed": "The email could not be sent. Check the address and try again.",
+    "backToLogin": "Back to login"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "subtitle": "The most-viewed riasly profiles, ranked by real profile views.",
+    "rank": "#",
+    "views": "Views",
+    "plan": "Plan",
+    "premium": "Premium",
+    "free": "Free",
+    "empty": "No profiles to rank yet — be the first to claim a handle.",
+    "claimCta": "Claim your handle"
+  },
+  "status": {
+    "title": "System status",
+    "subtitle": "Live health of the riasly platform, checked against the real database.",
+    "operational": "Operational",
+    "degraded": "Unavailable",
+    "database": "Database",
+    "web": "Web application",
+    "summary": "All systems operational",
+    "summaryDown": "Database unreachable",
+    "metrics": "Live metrics",
+    "lastChecked": "Last checked",
+    "users": "Users",
+    "profileViews": "Profile views",
+    "fileUploads": "File uploads",
+    "subscribers": "Subscribers"
+  },
+  "redeem": {
+    "title": "Redeem a code",
+    "subtitle": "Have a Premium code? Redeem it to unlock lifetime Premium.",
+    "codeLabel": "Redeem code",
+    "placeholder": "RIASLY-XXXX-XXXX",
+    "submit": "Redeem",
+    "success": "Premium unlocked. Enjoy!",
+    "invalidCode": "That code isn't valid.",
+    "alreadyUsed": "That code has already been used.",
+    "needLogin": "Please log in to redeem a code.",
+    "goLogin": "Log in"
+  },
+  "recovery": {
+    "title": "Account recovery",
+    "subtitle": "Enter the email tied to your account and we'll generate a reset link.",
+    "emailLabel": "Email",
+    "submit": "Send reset link",
+    "sentNote": "If that email exists, a reset link is ready below.",
+    "resetLink": "Your reset link",
+    "invalidEmail": "Enter a valid email address.",
+    "noAccount": "No account found for that email.",
+    "newPasswordTitle": "Set a new password",
+    "passwordLabel": "New password",
+    "updatePassword": "Update password",
+    "passwordUpdated": "Password updated. You can log in now.",
+    "invalidToken": "This reset link is invalid or has expired.",
+    "goLogin": "Go to login"
+  },
+  "changelog": {
+    "title": "Changelog",
+    "subtitle": "What's new on riasly.",
+    "latest": "Latest"
+  },
+  "profile": {
+    "views": "views",
+    "clickToEnter": "click to enter…",
+    "files": "Files",
+    "premiumBadge": "Premium · Lifetime",
+    "tabs": {
+      "home": "Home"
+    },
+    "sound": {
+      "play": "Play music",
+      "pause": "Pause music",
+      "mute": "Mute",
+      "unmute": "Unmute",
+      "volume": "Volume"
+    },
+    "discord": {
+      "online": "Online",
+      "idle": "Idle",
+      "dnd": "Do Not Disturb",
+      "offline": "Offline",
+      "lastSeen": "last seen {time}",
+      "elapsed": "Elapsed time",
+      "since": "since {time}",
+      "listeningTo": "Listening to {track}",
+      "activityTypes": {
+        "playing": "Playing",
+        "streaming": "Streaming",
+        "listening": "Listening",
+        "watching": "Watching",
+        "competing": "Competing"
+      },
+      "badges": {
+        "staff": "Discord Staff",
+        "partner": "Partner Server Owner",
+        "moderator": "Certified Moderator",
+        "developer": "Verified Bot Developer",
+        "activeDeveloper": "Active Developer",
+        "verifiedBot": "Verified Bot",
+        "bugHunter": "Bug Hunter",
+        "early": "Early Supporter",
+        "nitro": "Nitro",
+        "nitroClassic": "Nitro Classic",
+        "hypesquadEvents": "HypeSquad Events",
+        "bravery": "HypeSquad Bravery",
+        "brilliance": "HypeSquad Brilliance",
+        "balance": "HypeSquad Balance",
+        "clan": "Discord clan"
+      }
+    }
+  },
+  "templates": {
+    "title": "Find the perfect background for your profile",
+    "subtitle": "Every curated template is a real 4K loop — the drift is rendered into the pixels, not painted on with CSS. Apply one in a click.",
+    "tabs": {
+      "library": "Template Library",
+      "favorites": "Favorites",
+      "recent": "Recently Used",
+      "removed": "Removed"
+    },
+    "search": "Search templates…",
+    "sort": {
+      "label": "Sort",
+      "trend": "Trend",
+      "popular": "Popular",
+      "newest": "Newest",
+      "az": "A–Z"
+    },
+    "all": "All",
+    "use": "Use template",
+    "applied": "Applied ✓",
+    "usage": "uses",
+    "empty": "No templates match your search.",
+    "noneRecent": "No recently used templates yet.",
+    "favorite": "Add to favorites",
+    "unfavorite": "Remove from favorites",
+    "applying": "Applying…",
+    "badgeUhd": "4K Animated",
+    "badgeVideo": "HD Animated",
+    "badgeGif": "GIF",
+    "badgeStill": "4K Still",
+    "useAvatar": "Use as avatar",
+    "avatarApplying": "Setting…",
+    "avatarApplied": "Avatar ✓",
+    "mediaNote": "Animated backgrounds loop automatically.",
+    "tierHd": "HD",
+    "upscaledNote": "upscaled from HD",
+    "adminOnlyHint": "Admin mode: you can remove templates you don't like.",
+    "remove": "Remove",
+    "removing": "Removing…",
+    "confirmRemove": "Tap again to remove",
+    "restore": "Restore",
+    "restoring": "Restoring…",
+    "removedEmpty": "Nothing removed from the gallery.",
+    "forbiddenAdmin": "Only riasly admins can remove templates from the gallery.",
+    "admin": {
+      "title": "Add a template to the gallery",
+      "file": "Source file",
+      "name": "Name",
+      "category": "Category",
+      "author": "Author",
+      "tags": "Tags",
+      "accent": "Accent",
+      "submit": "Add to gallery",
+      "submitting": "Submitting…",
+      "added": "Queued for rendering.",
+      "hint": "A loop (mp4/webm/mov/gif) or a still (png/jpg/webp), up to {mb} MB. It is rendered into a 4K wall, a hover preview and a poster.",
+      "rendering": "Rendering…",
+      "renderHint": "This takes under a minute. The card lights up on its own when the render finishes.",
+      "retry": "Retry",
+      "delete": "Delete",
+      "confirmDelete": "Tap again to delete",
+      "deleted": "Template deleted.",
+      "failedTitle": "Render failed",
+      "pendingTitle": "In progress",
+      "emptyPending": "Nothing is rendering right now.",
+      "inUse": "A profile is still using this template.",
+      "forceDelete": "Tap again to force delete",
+      "forceDeleteInUse": "{count, plural, one {# profile is using this template. Force delete will detach it.} other {# profiles are using this template. Force delete will detach them.}}",
+      "busy": "Another render is already running. Try again once it finishes.",
+      "unsupported": "That file type can't be rendered.",
+      "tooLarge": "The file is over the {mb} MB limit.",
+      "noFile": "Choose a file first.",
+      "forbidden": "Only riasly admins can add gallery templates.",
+      "invalid": "Check the name, category and accent (a 6-digit hex like #8B5CF6).",
+      "uploadError": "Upload failed. Try again."
+    },
+    "motionNames": {
+      "ken": "Ken Burns",
+      "driftUp": "Vertical drift",
+      "panX": "Sideways pan",
+      "push": "Push in",
+      "orbit": "Orbit",
+      "breathe": "Breathe",
+      "none": "Native loop"
+    },
+    "fx": {
+      "grain": "film grain",
+      "scanlines": "scanlines",
+      "leak": "light leak",
+      "aurora": "aurora",
+      "particles": "particles",
+      "snow": "snow",
+      "vignette": "vignette",
+      "sheen": "sheen",
+      "speed": "speed lines",
+      "glitch": "RGB glitch"
+    },
+    "custom": {
+      "title": "Your own template",
+      "subtitle": "Upload your own video or GIF and make it your background.",
+      "upload": "Upload & apply",
+      "uploading": "Uploading…",
+      "applying": "Applying…",
+      "applied": "Applied ✓",
+      "useAsBackground": "Use as background",
+      "inUse": "In use",
+      "remove": "Remove background",
+      "removing": "Removing…",
+      "myFiles": "Your uploaded media",
+      "empty": "No compatible media uploaded yet — your first video or GIF will appear here.",
+      "noPreview": "No preview",
+      "noFile": "Choose a video or GIF file first.",
+      "presetActive": "Animated preset",
+      "locked": "Custom uploads unlock 7 days after your account is created.",
+      "daysLeft": "{days, plural, one {# day left} other {# days left}}.",
+      "hint": "MP4, WebM, MOV, GIF or WebP · up to {mb} MB · loops forever, silently, no audio. Served exactly as uploaded, never re-encoded. Stored on your account and reusable anytime.",
+      "measuring": "Measuring…",
+      "badge4k": "4K source",
+      "noReencode": "Your file is streamed as uploaded — the profile never re-encodes or upscales it, so real pixels are all you get.",
+      "selectHint": "Selected file: {w}×{h} px",
+      "belowUhd": "4K is 2160 px tall; this file is {h} px. For a true 4K wall, upload a 3840×2160 (or 2160×3840 vertical) MP4/WebM — a smaller file cannot be upgraded afterwards.",
+      "clip": {
+        "title": "Loop just a part of this clip",
+        "hint": "Set a start and an end in seconds. Leave one box empty to loop the rest; leave both empty to play the whole file.",
+        "start": "Start (sec)",
+        "end": "End (sec)",
+        "apply": "Apply clip",
+        "applying": "Saving…",
+        "reset": "Whole clip"
+      },
+      "errors": {
+        "locked": "Custom backgrounds unlock once your account is at least 7 days old.",
+        "unsupported": "That file type can't be used as a background. Use MP4, WebM, MOV, GIF or WebP.",
+        "missing": "We couldn't find that uploaded file anymore. Please upload it again.",
+        "tooLarge": "File too large — the limit is {mb} MB.",
+        "upload": "Upload failed. Please try again.",
+        "unauthorized": "Your session expired. Please log in again.",
+        "invalid": "Please check the file — something looks invalid."
+      }
+    }
+  },
+  "motion": {
+    "title": "Motion",
+    "system": "System",
+    "force": "Always",
+    "calm": "Calm",
+    "hint": "Choose how much of this page animates. Saved on this device."
+  },
+  "dashboard": {
+    "logout": "Log out",
+    "viewPublic": "View public profile",
+    "nav": {
+      "overview": "Overview",
+      "account": "Account",
+      "links": "Links",
+      "widgets": "Widgets",
+      "badges": "Badges",
+      "customize": "Customize",
+      "templates": "Templates",
+      "files": "Files",
+      "viewProfile": "View profile"
+    },
+    "groups": {
+      "profile": "Profile",
+      "account": "Account",
+      "customize": "Customize",
+      "content": "Content"
+    },
+    "accountPage": {
+      "changeHandle": {
+        "cooldown": "You can change your handle again in {days} days."
+      },
+      "title": "Account",
+      "subtitle": "Your profile at a glance — completion, connections and account management.",
+      "stats": {
+        "handle": "Username",
+        "nickname": "Display name",
+        "views": "Profile views"
+      },
+      "completion": {
+        "heading": "Profile completion",
+        "incomplete": "Your profile isn't complete yet!",
+        "done": "Your profile is complete.",
+        "checklist": {
+          "avatar": "Upload an avatar",
+          "bio": "Add a bio",
+          "discord": "Connect your Discord",
+          "socials": "Add your socials",
+          "links": "Add a bio link"
+        }
+      },
+      "connections": {
+        "heading": "Connections",
+        "discord": "Discord",
+        "google": "Google",
+        "connected": "Connected",
+        "connect": "Connect",
+        "disconnect": "Disconnect",
+        "locked": "That's your only way to sign in.",
+        "empty": "No accounts connected yet."
+      },
+      "manage": {
+        "heading": "Manage your account",
+        "changeHandle": "Change username",
+        "changeName": "Change display name",
+        "manageNicknames": "Manage nicknames",
+        "accountSettings": "Account settings"
+      },
+      "form": {
+        "handleNew": "New username",
+        "handleSave": "Save username",
+        "nameNew": "New display name",
+        "nicknamesNew": "Nicknames (comma-separated)",
+        "save": "Save",
+        "saving": "Saving…",
+        "saved": "Saved"
+      },
+      "errors": {
+        "taken": "That username is already taken.",
+        "invalid": "That username isn't valid."
+      },
+      "general": {
+        "heading": "General information",
+        "nicknames": "Nicknames",
+        "openNicknameManager": "Open nickname manager"
+      },
+      "language": {
+        "heading": "Language",
+        "label": "Display language"
+      },
+      "discordSettings": {
+        "heading": "Discord settings",
+        "hint": "Join our Discord server so our bot can see your live presence.",
+        "cta": "Join now",
+        "alreadyInServer": "You are already in the server",
+        "joining": "Joining…",
+        "joined": "Joined ✓"
+      },
+      "security": {
+        "heading": "Security"
+      },
+      "nicknameManager": {
+        "title": "Nickname manager",
+        "close": "Close",
+        "hint": "Up to {max} nicknames, {len} characters each.",
+        "rowPlaceholder": "Nickname",
+        "remove": "Remove",
+        "add": "Add nickname",
+        "cancel": "Cancel",
+        "save": "Save",
+        "saving": "Saving…",
+        "saved": "Saved",
+        "saveError": "Could not save."
+      },
+      "email": {
+        "heading": "Email",
+        "none": "No email set",
+        "reveal": "Show",
+        "hide": "Hide",
+        "verified": "Verified",
+        "notVerified": "Not verified",
+        "change": "Change",
+        "newEmail": "New email",
+        "sendCode": "Send code",
+        "working": "Working…",
+        "emailSent": "We emailed a 6-digit confirmation code to the new address. Enter it below.",
+        "emailFailed": "We couldn't send the confirmation email. Check the address or try again shortly.",
+        "enterCode": "Confirmation code",
+        "confirm": "Confirm",
+        "taken": "That email is already in use.",
+        "invalid": "That email isn't valid.",
+        "invalidToken": "That code is invalid or expired.",
+        "error": "Something went wrong."
+      },
+      "twoFactor": {
+        "heading": "Two-factor authentication",
+        "statusOn": "Turned on — your authenticator code is required at sign-in.",
+        "statusOff": "Add a second step to keep your account safe.",
+        "enable": "Turn on",
+        "working": "Working…",
+        "scanHint": "Scan this QR code with your authenticator app, or enter the key manually.",
+        "scanAlt": "Two-factor setup QR code",
+        "secretLabel": "Manual setup key",
+        "codeLabel": "Enter the 6-digit code",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "invalid": "That code isn't valid.",
+        "error": "Something went wrong.",
+        "backupTitle": "Your backup codes",
+        "backupHint": "Save these somewhere safe — each works once if you lose your authenticator. They won't be shown again.",
+        "done": "Done",
+        "disableCodeLabel": "Enter a current code to turn two-factor off",
+        "disableCodePlaceholder": "Code or backup",
+        "disable": "Turn off"
+      },
+      "sessions": {
+        "heading": "Active sessions",
+        "hint": "Devices signed in to your account.",
+        "thisDevice": "This device",
+        "unknown": "Unknown device",
+        "lastSeen": "Last seen",
+        "signOut": "Sign out",
+        "signOutOthers": "Sign out others",
+        "signOutAll": "Sign out everywhere",
+        "empty": "No other active sessions."
+      }
+    },
+    "shortcuts": {
+      "title": "Everything else is one click away",
+      "hint": "Your public page is built from these sections.",
+      "linksGo": "Connect accounts and add links",
+      "badgesGo": "See what you have earned",
+      "customizeGo": "Bio, accent, avatar, background",
+      "templatesGo": "Pick an animated background",
+      "filesGo": "Upload and manage downloads",
+      "badgesTitle": "Earned badges",
+      "open": "Open"
+    },
+    "stats": {
+      "views": "Profile views",
+      "links": "Links",
+      "files": "Files",
+      "plan": "Plan"
+    },
+    "sections": {
+      "profile": "Profile",
+      "appearance": "Appearance",
+      "links": "Links",
+      "socials": "Connected accounts",
+      "files": "File hosting"
+    },
+    "actions": {
+      "save": "Save",
+      "add": "Add",
+      "connect": "Connect",
+      "remove": "Remove",
+      "delete": "Delete",
+      "upload": "Upload",
+      "saving": "Saving…",
+      "saved": "Saved ✓",
+      "deleted": "Deleted"
+    },
+    "fields": {
+      "bio": "Bio",
+      "bioPlaceholder": "Tell people who you are…",
+      "accent": "Accent",
+      "label": "Label",
+      "urlPlaceholder": "https://…",
+      "profileUrl": "Profile URL",
+      "platform": "Platform",
+      "username": "@username",
+      "private": "Private",
+      "optional": "optional",
+      "avatarUrl": "Avatar URL",
+      "backgroundUrl": "Background GIF / image URL",
+      "backgroundHint": "Paste a GIF, image, or a Tenor/Giphy share link — share links are auto-converted. Leave empty for an animated preset.",
+      "animatedPreset": "Animated preset",
+      "usePreset": "Use animated preset",
+      "resolvedNote": "Tip: Tenor/Giphy page links are converted to the GIF automatically.",
+      "customTemplateCta": "Want your own video? Use Your own template just below."
+    },
+    "empty": {
+      "links": "No links yet.",
+      "socials": "No accounts connected yet.",
+      "files": "No files uploaded yet."
+    },
+    "errors": {
+      "invalid": "Please check the fields — something looks invalid.",
+      "unauthorized": "Your session expired. Please log in again.",
+      "badmedia": "That link isn't a direct GIF/image and we couldn't resolve it. Paste a direct media link (e.g. a .gif URL).",
+      "forbidden": "Badges can only be granted or removed by a riasly admin.",
+      "lastauth": "This is the only sign-in method on your account. Set a password or connect another provider before removing it.",
+      "quota": "You're out of storage. Delete a few files, or go Premium for unlimited file hosting."
+    },
+    "linksPage": {
+      "title": "Links",
+      "subtitle": "Connect the accounts you own and add any link you want on your page.",
+      "gridHint": "Pick a platform to connect it — one account per platform.",
+      "gridTitle": "Platforms",
+      "connected": "Connected",
+      "notConnected": "Not connected",
+      "edit": "Change",
+      "replace": "Save changes",
+      "customTile": "Custom link",
+      "customTitle": "Custom links",
+      "listTitle": "Connected accounts",
+      "socialList": "These show as icons under your bio.",
+      "noneYet": "Nothing connected yet — pick a platform to start.",
+      "connectedCount": "{count} of {total} platforms connected",
+      "openForm": "Connect {platform}",
+      "removeOne": "Disconnect",
+      "discordManagedElsewhere": "Discord is linked through your account — manage it on the Customize page."
+    },
+    "widgetsPage": {
+      "title": "Widgets & tabs",
+      "subtitle": "Add live embeds to your page and open extra tabs beside it.",
+      "typeTitle": "Choose a widget",
+      "types": {
+        "youtube": "YouTube",
+        "spotify": "Spotify",
+        "soundcloud": "SoundCloud",
+        "twitch": "Twitch",
+        "discord": "Discord",
+        "text": "Text note",
+        "image": "Image",
+        "link": "Link button",
+        "discord_status": "Discord Status",
+        "discord_server": "Discord Server",
+        "telegram": "Telegram",
+        "roblox": "Roblox",
+        "github": "GitHub",
+        "cs": "Counter-Strike",
+        "lastfm": "Last.fm",
+        "weather": "Weather",
+        "timezone": "Time zone"
+      },
+      "hint": {
+        "youtube": "Paste a video or playlist link (youtube.com or youtu.be).",
+        "spotify": "Paste a track, album, playlist or artist link (open.spotify.com).",
+        "soundcloud": "Paste a track link (soundcloud.com/user/title).",
+        "twitch": "Paste a channel link (twitch.tv/yourchannel).",
+        "discord": "Paste an invite link (discord.gg/code or discord.com/invite/code).",
+        "text": "A short line shown as plain text — no formatting, up to 280 characters.",
+        "image": "Paste a direct image URL, or a link to an image you uploaded.",
+        "link": "Any web address, shown as a full-width button.",
+        "discord_status": "Show your live Discord presence card. Link Discord first on this page.",
+        "discord_server": "Paste an invite link (discord.gg/code or discord.com/invite/code).",
+        "telegram": "Paste your t.me link or username (t.me/yourhandle).",
+        "roblox": "Paste your Roblox profile link (roblox.com/users/id).",
+        "github": "Paste your GitHub profile link (github.com/username).",
+        "cs": "Paste your Steam profile link (steamcommunity.com/id/…).",
+        "lastfm": "Paste your Last.fm profile link (last.fm/user/username).",
+        "weather": "Show a city chip. Type a city name — no live forecast.",
+        "timezone": "Show the current time in a chosen time zone."
+      },
+      "form": {
+        "label": "Label (optional)",
+        "source": "Source link",
+        "text": "Your note",
+        "homeTab": "Main page",
+        "add": "Add widget",
+        "adding": "Adding…"
+      },
+      "list": {
+        "title": "Widgets on your main page",
+        "empty": "No widgets yet — open Settings to add one."
+      },
+      "saved": "Widget saved ✓",
+      "remove": "Remove",
+      "limitFree": "Free plan allows up to {max} widgets.",
+      "errors": {
+        "invalid": "That link doesn't look valid for the chosen widget.",
+        "limit": "You've hit the free-plan limit. Upgrade to Premium for more.",
+        "missing": "That tab no longer exists.",
+        "unauthorized": "Your session expired. Please log in again.",
+        "premium": "This widget requires Premium."
+      },
+      "pages": {
+        "title": "Extra tabs",
+        "add": "Add tab",
+        "titleField": "Tab name",
+        "slug": "url-slug",
+        "delete": "Delete tab",
+        "empty": "No extra tabs yet. Add one to open a second page.",
+        "saved": "Tab saved ✓",
+        "limitFree": "Free plan allows up to {max} extra tab."
+      }
+    },
+    "widgetModal": {
+      "title": "Profile widget",
+      "subtitle": "Turn widgets on or off and configure each one.",
+      "activeCount": "{count, plural, one {# active widget} other {# active widgets}}",
+      "open": "Settings",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "chooseType": "Choose a widget",
+      "premiumLocked": "This widget is available with Premium.",
+      "saved": "Saved ✓",
+      "saving": "Saving…",
+      "apply": "Apply",
+      "cancel": "Cancel",
+      "showBadges": "Show Discord badges",
+      "idleText": "Idle text",
+      "idlePlaceholder": "What to show when nothing is playing",
+      "city": "City",
+      "cityPlaceholder": "e.g. Istanbul",
+      "zone": "Time zone",
+      "sourceLabel": "Source link",
+      "noteLabel": "Your note",
+      "targetPage": "Add to"
+    },
+    "customizePage": {
+      "title": "Customize",
+      "subtitle": "Everything visitors see on your profile starts here.",
+      "appearanceHint": "Bio, accent colour and a background link — the avatar has its own card below.",
+      "uploadHint": "Bring your own video, avatar, music and cursor.",
+      "templatesCta": "Prefer one of ours? Pick an animated template",
+      "uploadHere": "Want your own video or GIF? Upload it under Customize",
+      "sections": {
+        "fileUploader": "File uploader",
+        "general": "General customization",
+        "colors": "Colour customization",
+        "other": "Other customizations"
+      },
+      "fields": {
+        "bio": "Description",
+        "bioPlaceholder": "Say something about yourself…",
+        "panel": "Profile opacity & blur",
+        "opacity": "Opacity",
+        "blur": "Blur",
+        "bgEffect": "Background effect",
+        "usernameEffect": "Username effect",
+        "location": "Location",
+        "locationPlaceholder": "Istanbul, Türkiye",
+        "glitterName": "Glitter on name",
+        "glitterSocials": "Glitter on socials",
+        "glitterBadges": "Glitter on badges",
+        "accent": "Accent",
+        "textColor": "Text",
+        "bgColor": "Background",
+        "iconColor": "Social icon color",
+        "iconColorHint": "Colors the social glyphs and their glow on your profile.",
+        "effectColor": "Effect",
+        "effectColor2": "Effect secondary",
+        "effectColor3": "Effect tertiary",
+        "gradient": "Profile gradient",
+        "monochrome": "Monochrome icons",
+        "animatedTitle": "Animated title",
+        "boxColors": "Box colors",
+        "soundControl": "Sound control",
+        "discordDecoration": "Discord avatar decoration",
+        "profileAlign": "Profile position"
+      },
+      "alignments": {
+        "left": "Left",
+        "center": "Center",
+        "right": "Right"
+      },
+      "hints": {
+        "discordNotConnected": "Connect Discord above to switch this on.",
+        "needSound": "Upload a sound in the file uploader first."
+      },
+      "discord": {
+        "title": "Discord",
+        "connect": "Connect Discord",
+        "connecting": "Opening Discord…",
+        "connected": "Connected",
+        "disconnect": "Revoke authorisation",
+        "disconnected": "Discord disconnected.",
+        "consentNote": "Discord's own authorisation screen will open, listing exactly what this application may access — your name, avatar, banner, badge marks, and that it can join servers on your behalf. Nothing is typed by hand any more.",
+        "lanyardNote": "The live “Playing …” line comes from our own Discord bot, so staying a member of our server is what keeps it updating.",
+        "inGuild": "You are in our Discord server — your live activity shows on your profile.",
+        "notInGuild": "You are not in our Discord server, so the bot cannot see what you are playing.",
+        "rejoin": "Join again",
+        "rejoined": "You are back in the server.",
+        "rejoinFailed": "Discord refused the join. The bot is probably missing the Create Invite permission, or this connection predates it.",
+        "scopeOutdated": "This connection was granted before the server-join permission existed. Use Disconnect, then Connect again to grant it.",
+        "botNotConfigured": "The live “Playing …” line comes from Lanyard, so you need to be a member of Lanyard's Discord server for it to appear.",
+        "needConnection": "Connect Discord to show your avatar, badges and live activity on your profile.",
+        "lastAuth": "Discord is the only sign-in method on this account. Set a password or connect another provider first."
+      },
+      "effects": {
+        "template": "Template default",
+        "none": "None",
+        "particles": "Particles",
+        "snow": "Snowflakes",
+        "aurora": "Aurora",
+        "glitch": "Glitch",
+        "scanlines": "Scanlines",
+        "sheen": "Sheen",
+        "leak": "Light leak",
+        "vignette": "Vignette",
+        "grain": "Grain",
+        "speed": "Speed lines"
+      },
+      "usernameEffects": {
+        "none": "None",
+        "glow": "Glow",
+        "neon": "Neon",
+        "gradient": "Gradient",
+        "shimmer": "Shimmer",
+        "rainbow": "Rainbow",
+        "typewriter": "Typewriter",
+        "glitch": "Glitch",
+        "flicker": "Flicker",
+        "glowpulse": "Glow pulse"
+      },
+      "widget": {
+        "title": "Profile widget",
+        "subtitle": "Configure the Discord presence card on your profile.",
+        "enable": "Show the presence card",
+        "showBadges": "Show Discord badges",
+        "idleText": "Idle text",
+        "idlePlaceholder": "e.g. Away for a bit",
+        "save": "Save widget",
+        "saving": "Saving…",
+        "saved": "Widget saved"
+      },
+      "effectsPicker": {
+        "usernameTitle": "Username effects",
+        "bgTitle": "Background effects",
+        "choose": "Choose",
+        "close": "Close",
+        "cancel": "Cancel",
+        "save": "Save",
+        "previewName": "yourname",
+        "paletteTitle": "Effect colors"
+      },
+      "effectPresets": {
+        "violet": "Violet",
+        "sunset": "Sunset",
+        "emerald": "Emerald",
+        "ruby": "Ruby",
+        "gold": "Gold",
+        "ice": "Ice",
+        "candy": "Candy",
+        "neon": "Neon",
+        "mono": "Mono"
+      },
+      "saveBar": {
+        "unsaved": "You have unsaved changes",
+        "saved": "All changes saved",
+        "reset": "Reset",
+        "save": "Save changes",
+        "saving": "Saving…"
+      },
+      "sound": {
+        "title": "Sound",
+        "subtitle": "A track that starts playing when a visitor enters — they can mute it any time.",
+        "previewFallback": "No sound uploaded yet.",
+        "hint": "MP3, M4A, OGG, WAV or WebM audio · up to {mb} MB. Music starts on entering the profile; the speaker button mutes or unmutes it.",
+        "upload": "Upload & apply",
+        "uploading": "Uploading…",
+        "applying": "Applying…",
+        "remove": "Remove sound",
+        "removing": "Removing…",
+        "noFile": "Choose an audio file first.",
+        "myFiles": "Reuse an uploaded file",
+        "inUse": "In use",
+        "use": "Use",
+        "rangeTitle": "Play a section only",
+        "rangeHint": "Seconds to start and stop at. Leave a field empty to keep it open-ended.",
+        "rangeStart": "Start (s)",
+        "rangeEnd": "End (s)",
+        "rangeApply": "Apply range",
+        "rangeReset": "Whole track",
+        "errors": {
+          "unsupported": "That file type can't be used as a sound. Use MP3, M4A, OGG, WAV or WebM audio.",
+          "tooLarge": "Sound too large — the limit is {mb} MB. Pick a smaller file.",
+          "missing": "We couldn't find that uploaded file anymore. Please upload it again.",
+          "upload": "Upload failed. Please try again.",
+          "unauthorized": "Your session expired. Please log in again.",
+          "invalid": "Please check the file — something looks invalid."
+        }
+      },
+      "cursor": {
+        "title": "Custom cursor",
+        "subtitle": "A PNG that becomes the pointer on your profile.",
+        "previewFallback": "No cursor",
+        "hint": "PNG only · up to {mb} MB. A small image with some transparent padding works best.",
+        "upload": "Upload & apply",
+        "uploading": "Uploading…",
+        "applying": "Applying…",
+        "remove": "Remove cursor",
+        "removing": "Removing…",
+        "noFile": "Choose a PNG file first.",
+        "myFiles": "Reuse an uploaded file",
+        "inUse": "In use",
+        "use": "Use",
+        "errors": {
+          "unsupported": "A cursor must be a PNG image.",
+          "tooLarge": "Cursor too large — the limit is {mb} MB. Pick a smaller file.",
+          "missing": "We couldn't find that uploaded file anymore. Please upload it again.",
+          "upload": "Upload failed. Please try again.",
+          "unauthorized": "Your session expired. Please log in again.",
+          "invalid": "Please check the file — something looks invalid."
+        }
+      }
+    },
+    "avatarCard": {
+      "title": "Avatar",
+      "subtitle": "A square GIF or short clip works best — it is shown in a circle.",
+      "upload": "Upload & apply",
+      "uploading": "Uploading…",
+      "applying": "Applying…",
+      "remove": "Remove avatar",
+      "removing": "Removing…",
+      "noFile": "Choose an image or video file first.",
+      "myFiles": "Reuse an uploaded file",
+      "useAsAvatar": "Use as avatar",
+      "inUse": "In use",
+      "empty": "Nothing to reuse yet — your uploads will show up here.",
+      "previewFallback": "@",
+      "hint": "PNG, JPG, GIF, WebP or a looping MP4/WebM · up to {mb} MB · plays silently, forever. Streamed as uploaded, never re-encoded.",
+      "errors": {
+        "unsupported": "That file type can't be used as an avatar. Use PNG, JPG, GIF, WebP, MP4, WebM or MOV.",
+        "tooLarge": "Avatar too large — the limit is {mb} MB. Pick a smaller file.",
+        "missing": "We couldn't find that uploaded file anymore. Please upload it again.",
+        "upload": "Upload failed. Please try again.",
+        "unauthorized": "Your session expired. Please log in again.",
+        "invalid": "Please check the file — something looks invalid."
+      }
+    },
+    "filesPage": {
+      "title": "Files",
+      "subtitle": "Upload anything and share it behind your riasly handle."
+    }
+  },
+  "badges": {
+    "title": "Badges",
+    "subtitle": "Earned from what you actually do on riasly — never bought.",
+    "earned": "Earned",
+    "locked": "Locked",
+    "earnedCount": "{earned} of {total} earned",
+    "progress": "{current} / {target}",
+    "noEarned": "No badges yet — the fastest one is writing a bio.",
+    "noLocked": "Every badge is already yours. Keep going.",
+    "hint": "Badges refresh the moment you change something on your profile.",
+    "keepForever": "Once earned, a badge stays — even if you later change the profile it came from.",
+    "color": "Badge colour",
+    "colorReset": "Reset",
+    "colorSaved": "Badge colour saved.",
+    "showMore": "+{n} more",
+    "showLess": "Show less",
+    "source": {
+      "auto": "Automatic",
+      "admin": "By team"
+    },
+    "admin": {
+      "title": "Admin: grant or revoke",
+      "handle": "Handle",
+      "placeholder": "username, without the slash",
+      "badge": "Badge",
+      "grant": "Grant",
+      "revoke": "Revoke",
+      "done": "Updated",
+      "forbidden": "Your account is not on the admin list.",
+      "note": "Revoking removes the badge from that account for good."
+    },
+    "items": {
+      "early": {
+        "name": "Day One",
+        "desc": "For the first {n} accounts on riasly."
+      },
+      "veteran": {
+        "name": "Veteran",
+        "desc": "For accounts {n} days and older."
+      },
+      "complete": {
+        "name": "Complete Profile",
+        "desc": "Bio, avatar, a connected account and a link — all {n} filled in."
+      },
+      "collector": {
+        "name": "Connector",
+        "desc": "Connect {n} different platforms."
+      },
+      "linker": {
+        "name": "Link Pack",
+        "desc": "Put {n} links on your page."
+      },
+      "stylist": {
+        "name": "Stylist",
+        "desc": "Pick your own accent colour."
+      },
+      "curator": {
+        "name": "Curated",
+        "desc": "Apply one of our animated templates."
+      },
+      "ownbackground": {
+        "name": "Own It",
+        "desc": "Use your own uploaded video or GIF as the background."
+      },
+      "uploader": {
+        "name": "Host",
+        "desc": "Host at least {n} file publicly."
+      },
+      "views1k": {
+        "name": "1K Views",
+        "desc": "{n} profile views."
+      },
+      "views10k": {
+        "name": "10K Club",
+        "desc": "{n} profile views."
+      },
+      "downloads100": {
+        "name": "Shared",
+        "desc": "Your files downloaded {n} times."
+      },
+      "top20": {
+        "name": "Charted",
+        "desc": "Reach the top {n} on the leaderboard."
+      },
+      "redeemer": {
+        "name": "Insider",
+        "desc": "Redeemed a riasly code."
+      }
+    }
+  }
+}

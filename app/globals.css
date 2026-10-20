@@ -1,0 +1,713 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #fafafa;
+  font-family: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: #7c3aed;
+  color: #fafafa;
+}
+
+/* Restrained violet focus ring per design system */
+:where(a, button, input, select, [tabindex]):focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Premium glass surface */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Violet → fuchsia → cyan gradient text for headings */
+.perspective {
+  perspective: 1000px;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    120deg,
+    #ffffff 0%,
+    #d8b4fe 35%,
+    #f0abfc 65%,
+    #a5f3fc 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #6d28d9;
+  border-radius: 999px;
+  border: 2px solid #0a0a0a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+/* ===== Template effect layers =====
+ * The overlay half of every recipe in lib/template-recipes.ts. Three rules hold
+ * for all of them: they are aria-hidden and pointer-events-none (decoration is
+ * never clickable), they animate transform/opacity/background-position only, and
+ * they cost no download — the artwork they sit on is the only file fetched.
+ * Layers that translate or blur their own edges are oversized instead of
+ * inset-0, so no unpainted sliver can appear at the frame border.
+ */
+.fx-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Film grain: one inline SVG turbulence tile, jittered in steps. */
+.fx-grain {
+  inset: -6%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.085;
+  animation: fx-grain 1.1s steps(4) infinite;
+}
+@keyframes fx-grain {
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(-1.5%, 1%, 0); }
+  50% { transform: translate3d(1%, -1.5%, 0); }
+  75% { transform: translate3d(-0.5%, -1%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* CRT scanlines, crawling one tile-height per loop. */
+.fx-scanlines {
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06) 0 1px,
+    transparent 1px 3px
+  );
+  opacity: 0.55;
+  animation: fx-scan 8s linear infinite;
+}
+@keyframes fx-scan {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, 3px, 0); }
+}
+
+/* Accent-tinted light leak sweeping across the art. */
+.fx-leak {
+  background-image: radial-gradient(
+    38% 46% at 20% 22%,
+    var(--fx-accent, #8b5cf6),
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+  opacity: 0.35;
+  animation: fx-leak 16s ease-in-out infinite;
+}
+@keyframes fx-leak {
+  0%,
+  100% {
+    transform: translate3d(-6%, -3%, 0) scale(1);
+    opacity: 0.28;
+  }
+  50% {
+    transform: translate3d(8%, 5%, 0) scale(1.15);
+    opacity: 0.5;
+  }
+}
+
+/* Two soft accent blooms drifting. No blur(): a full-page filter would repaint
+ * the whole surface, and a wide radial falloff already reads as light. */
+.fx-aurora {
+  background-image: radial-gradient(
+      30% 38% at 18% 30%,
+      var(--fx-accent, #8b5cf6),
+      transparent 68%
+    ),
+    radial-gradient(28% 36% at 78% 64%, #22d3ee, transparent 68%);
+  mix-blend-mode: screen;
+  opacity: 0.32;
+  animation: fx-aurora 20s ease-in-out infinite;
+}
+@keyframes fx-aurora {
+  0%,
+  100% {
+    transform: translate3d(-3%, 2%, 0);
+    opacity: 0.26;
+  }
+  50% {
+    transform: translate3d(4%, -3%, 0);
+    opacity: 0.38;
+  }
+}
+
+/* Corner darkening that breathes (opacity only — the shadow itself is fixed). */
+.fx-vignette {
+  box-shadow: inset 0 0 220px 60px rgba(0, 0, 0, 0.55);
+  animation: fx-vignette-breathe 12s ease-in-out infinite;
+}
+@keyframes fx-vignette-breathe {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Diagonal sheen crossing the frame, same background-position trick as shimmer. */
+.fx-sheen {
+  background-image: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.14) 50%,
+    transparent 60%
+  );
+  background-repeat: no-repeat;
+  background-size: 300% 100%;
+  animation: fx-sheen 9s ease-in-out infinite;
+}
+@keyframes fx-sheen {
+  0% {
+    background-position: -120% 0;
+  }
+  60%,
+  100% {
+    background-position: 220% 0;
+  }
+}
+
+/* Motion streaks, masked so they only exist toward the edges. */
+.fx-speed {
+  inset: 0 -30px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 0 2px,
+    transparent 2px 26px
+  );
+  -webkit-mask-image: radial-gradient(
+    62% 62% at 50% 50%,
+    transparent 32%,
+    #000 100%
+  );
+  mask-image: radial-gradient(62% 62% at 50% 50%, transparent 32%, #000 100%);
+  opacity: 0.3;
+  animation: fx-speed-run 1.6s steps(6) infinite;
+}
+@keyframes fx-speed-run {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-26px, 0, 0); }
+}
+
+/* RGB separation flicker, quiet most of the loop and sharp for a moment. */
+.fx-glitch {
+  inset: -6px;
+  background-image: repeating-linear-gradient(
+      180deg,
+      rgba(34, 211, 238, 0.1) 0 1px,
+      transparent 1px 4px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      rgba(217, 70, 239, 0.1) 0 1px,
+      transparent 1px 5px
+    );
+  mix-blend-mode: screen;
+  animation: fx-glitch-jitter 3.2s steps(8) infinite;
+}
+@keyframes fx-glitch-jitter {
+  0%,
+  92% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.35;
+  }
+  94% {
+    transform: translate3d(-4px, 1px, 0);
+    opacity: 0.6;
+  }
+  96% {
+    transform: translate3d(3px, -2px, 0);
+    opacity: 0.45;
+  }
+  98% {
+    transform: translate3d(-2px, 0, 0);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.35;
+  }
+}
+
+/* Snowfall: four tiled dot layers drifting downward at different speeds, so the
+ * field reads as depth rather than one flat scroll. Pure background-position —
+ * no per-flake DOM, no canvas — so it costs nothing and obeys the motion clamp
+ * below like every other layer. */
+.fx-snow {
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.95), transparent),
+    radial-gradient(1.5px 1.5px at 65% 70%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 82% 18%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(2.5px 2.5px at 42% 88%, rgba(255, 255, 255, 0.85), transparent);
+  background-size: 220px 220px, 160px 160px, 120px 120px, 260px 260px;
+  background-repeat: repeat;
+  opacity: 0.85;
+  animation: fx-snow-fall 14s linear infinite;
+}
+@keyframes fx-snow-fall {
+  from {
+    background-position: 0 -220px, 30px -160px, -20px -120px, 10px -260px;
+  }
+  to {
+    background-position: 0 220px, 30px 160px, -20px 120px, 10px 260px;
+  }
+}
+
+/* ---- Username treatments (applied to the profile <h1>) ----
+ * Each is decoration only: it never changes the text, and the gradient/shimmer
+ * variants read --fx-accent so they tie into the profile's chosen effect colour. */
+
+/* The look when NO effect is chosen: a plain white bloom, like the reference
+ * profile. Declared BEFORE the .name-* rules on purpose — ProfileStage only adds
+ * this class when no effect class is present, and source order means a chosen
+ * effect's own text-shadow would win anyway. */
+.name-hero {
+  color: #fff;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.55), 0 0 44px rgba(255, 255, 255, 0.22);
+}
+.name-glow {
+  text-shadow: 0 0 14px var(--fx-accent, #8b5cf6), 0 0 34px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 70%, transparent),
+    0 0 64px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 40%, transparent);
+  animation: name-glow 2.6s ease-in-out infinite;
+}
+/* A gentle, always-moving breathe — clearly alive next to the static `none`
+ * bloom, but softer than the heartbeat of .name-glowpulse. */
+@keyframes name-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px var(--fx-accent, #8b5cf6), 0 0 24px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 50%, transparent),
+      0 0 48px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 28%, transparent);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--fx-accent, #8b5cf6), 0 0 52px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 95%, transparent),
+      0 0 92px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 50%, transparent);
+  }
+}
+.name-neon {
+  color: #fff;
+  text-shadow: 0 0 6px var(--fx-accent, #8b5cf6), 0 0 18px var(--fx-accent, #8b5cf6),
+    0 0 38px var(--fx-accent, #8b5cf6), 0 0 70px var(--fx-accent, #8b5cf6);
+  animation: name-neon 3s ease-in-out infinite;
+}
+/* A lit neon tube: bright white core, deep saturated halo, and a faint
+ * intensity wobble that keeps it reading as a real sign, not a static glow. */
+@keyframes name-neon {
+  0%,
+  100% {
+    text-shadow: 0 0 6px var(--fx-accent, #8b5cf6), 0 0 18px var(--fx-accent, #8b5cf6),
+      0 0 38px var(--fx-accent, #8b5cf6), 0 0 70px var(--fx-accent, #8b5cf6);
+  }
+  50% {
+    text-shadow: 0 0 4px var(--fx-accent, #8b5cf6), 0 0 13px var(--fx-accent, #8b5cf6),
+      0 0 28px var(--fx-accent, #8b5cf6), 0 0 52px var(--fx-accent, #8b5cf6);
+  }
+}
+.name-gradient {
+  background-image: linear-gradient(
+    90deg,
+    var(--fx-accent, #8b5cf6),
+    var(--fx-accent2, #22d3ee),
+    var(--fx-accent3, #d946ef),
+    var(--fx-accent, #8b5cf6)
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: name-gradient-pan 6s linear infinite;
+}
+@keyframes name-gradient-pan {
+  to {
+    background-position: 220% center;
+  }
+}
+/* The body colour must be a real value, never currentColor: this rule sets
+ * `color: transparent` for the clip, so currentColor resolved to transparent and
+ * the name was invisible outside the moving white band. --fx-accent is the same
+ * variable the rest of the family reads, and it also fixes the resting frame —
+ * a frozen animation now shows solid accent instead of nothing. */
+.name-shimmer {
+  background-image: linear-gradient(
+    100deg,
+    var(--fx-accent, #8b5cf6) 25%,
+    #ffffff 50%,
+    var(--fx-accent, #8b5cf6) 75%
+  );
+  background-size: 200% 100%;
+  background-position: 200% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* Continuous, never stalls. The old `ease-in-out` keyframe parked the highlight
+   * off-screen from 60% to 100% (~1.8s of a 4.5s loop), so the name visibly froze
+   * every cycle — the reported "duraksama". Now the sweep runs the whole cycle at
+   * `linear`, and the travel (400%) is an exact multiple of the 200% tile, so the
+   * loop wraps seamlessly with no snap and no paused frame. */
+  animation: name-shimmer-run 3s linear infinite;
+}
+@keyframes name-shimmer-run {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+.name-animated {
+  animation: name-float 3.2s ease-in-out infinite;
+}
+/* `translate`, not `transform`: the float now lives on the Reveal wrapper, whose
+ * inline transform framer-motion owns. The two properties compose instead of one
+ * erasing the other, which is how this rule stopped clobbering the chosen
+ * effect's own `animation` shorthand on the same element. */
+@keyframes name-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -3px;
+  }
+}
+
+/* Glitter: a twinkling sparkle field over the element it wraps. The host must be
+ * position:relative (ProfileStage adds that inline); the overlay itself is
+ * pointer-events-none so it can never swallow a click meant for a link. */
+.glitter {
+  position: relative;
+}
+.glitter::after {
+  content: "";
+  position: absolute;
+  inset: -35%;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 28% 68%, #fff, transparent),
+    radial-gradient(1px 1px at 44% 34%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 58% 82%, #fff, transparent),
+    radial-gradient(1px 1px at 72% 48%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 86% 20%, #fff, transparent),
+    radial-gradient(1px 1px at 36% 90%, #fff, transparent),
+    radial-gradient(1px 1px at 92% 74%, #fff, transparent);
+  background-size: 56px 56px;
+  opacity: 0.3;
+  animation: glitter-twinkle 2.4s ease-in-out infinite;
+}
+@keyframes glitter-twinkle {
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
+}
+
+/* ---- Extra username treatments (all CSS-only + deterministic) ----
+ * Every one reads --fx-accent (set on the ProfileStage root) so the effect ties
+ * into the owner's chosen accent, and none of them use runtime randomness — the
+ * server render and the client hydration must produce byte-identical DOM. The
+ * global reduced-motion clamp below freezes them automatically. */
+.name-rainbow {
+  background-image: linear-gradient(
+    90deg,
+    var(--fx-accent, #ff4d4d),
+    var(--fx-accent2, #ffd24d),
+    #4dff88,
+    #4dd2ff,
+    #b14dff,
+    var(--fx-accent, #ff4d4d)
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: name-rainbow 4s linear infinite;
+}
+@keyframes name-rainbow {
+  to {
+    background-position: 300% center;
+  }
+}
+.name-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  /* The BASE width is the full name, never 0: a frozen/`calm` frame then shows
+   * the whole name instead of an invisible one. The infinite animation drives
+   * the visible type → hold → erase cycle on top of this. */
+  max-width: 40ch;
+  border-right: 2px solid var(--fx-accent, #8b5cf6);
+  animation: name-typewriter 6s steps(40, end) infinite,
+    name-caret 0.8s step-end infinite;
+}
+@keyframes name-typewriter {
+  0% {
+    max-width: 0;
+  }
+  45% {
+    max-width: 40ch;
+  }
+  60% {
+    max-width: 40ch;
+  }
+  95%,
+  100% {
+    max-width: 0;
+  }
+}
+@keyframes name-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+/* The 0% frame copied into the rule body: under the global reduced-motion clamp
+   the animation stops on a frame of its own choosing, and without a base shadow
+   a frozen glitch/sparkle name was indistinguishable from no effect at all. */
+.name-glitch {
+  position: relative;
+  color: #fff;
+  text-shadow: -2px 0 var(--fx-accent, #8b5cf6), 2px 0 var(--fx-accent2, #22d3ee);
+  animation: name-glitch 2.4s infinite steps(3);
+}
+@keyframes name-glitch {
+  0%,
+  100% {
+    text-shadow: -2px 0 var(--fx-accent, #8b5cf6), 2px 0 var(--fx-accent2, #22d3ee);
+    transform: translateX(0);
+  }
+  15% {
+    text-shadow: 3px 0 var(--fx-accent3, #d946ef), -3px 0 var(--fx-accent2, #22d3ee);
+    transform: translateX(-2px) skewX(-4deg);
+  }
+  30% {
+    text-shadow: -3px 0 var(--fx-accent2, #22d3ee), 3px 0 var(--fx-accent3, #d946ef);
+    transform: translateX(2px) skewX(3deg);
+  }
+  45% {
+    text-shadow: 2px 0 var(--fx-accent, #8b5cf6), -2px 0 var(--fx-accent2, #22d3ee);
+    transform: translateX(-1px);
+  }
+  60% {
+    text-shadow: 1px 0 var(--fx-accent, #8b5cf6), -1px 0 var(--fx-accent2, #22d3ee);
+    transform: translateX(1px) skewX(2deg);
+  }
+  75% {
+    text-shadow: -2px 0 var(--fx-accent3, #d946ef), 2px 0 var(--fx-accent2, #22d3ee);
+    transform: translateX(0);
+  }
+}
+/* sparkle effect removed (see note near .glitter): the glitter toggle is now
+   the single authoritative sparkle source. */
+.name-flicker {
+  color: #fff;
+  text-shadow: 0 0 8px var(--fx-accent, #8b5cf6), 0 0 20px var(--fx-accent, #8b5cf6),
+    0 0 40px var(--fx-accent, #8b5cf6), 0 0 72px var(--fx-accent, #8b5cf6);
+  animation: name-flicker 3s linear infinite;
+}
+/* A failing neon tube. The dim frames bottom out at 0.55, never near 0, so the
+ * name stays legible and the flicker reads intentional rather than broken. */
+@keyframes name-flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  80%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.55;
+  }
+}
+.name-glowpulse {
+  color: #fff;
+  text-shadow: 0 0 12px var(--fx-accent, #8b5cf6), 0 0 30px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 75%, transparent),
+    0 0 60px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 45%, transparent);
+  animation: name-glowpulse 2.2s ease-in-out infinite;
+}
+/* A heartbeat: a wide bloom swell plus a slight scale, clearly more dramatic
+ * than the gentle .name-glow breathe. */
+@keyframes name-glowpulse {
+  0%,
+  100% {
+    text-shadow: 0 0 8px var(--fx-accent, #8b5cf6), 0 0 18px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 50%, transparent),
+      0 0 36px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 30%, transparent);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 26px var(--fx-accent, #8b5cf6), 0 0 60px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 100%, transparent),
+      0 0 110px color-mix(in srgb, var(--fx-accent2, #8b5cf6) 60%, transparent);
+    transform: scale(1.05);
+  }
+}
+
+/* Continuous, hover-independent bloom on the social row. Static on purpose: an
+ * animated `filter` re-rasterises up to nine glyphs every frame for no gain over
+ * the reference's still glow, and the anchor's own hover:shadow-* already gives
+ * the interaction. --bloom is set inline by ProfileStage: the owner's picked
+ * icon colour when they chose one, otherwise white (or their flat colour under
+ * "monochrome icons"), falling back to the brand. */
+.social-glow {
+  filter: drop-shadow(0 0 5px var(--bloom, var(--brand, #8b5cf6)))
+    drop-shadow(0 0 16px var(--bloom, var(--brand, #8b5cf6)));
+}
+
+/* The view-count pill borrows the effect accent for a faint bloom. */
+.view-pill {
+  box-shadow: 0 0 16px -8px var(--fx-accent, #8b5cf6);
+}
+
+/* Premium badge shell shared by riasly badge glyphs and Discord marks. The
+ * gradient is a background-IMAGE on purpose so badgeToneClass's background-COLOR
+ * still tints underneath; no filter and no animation, so a row of chips costs
+ * nothing per frame. Lives here (not Tailwind) because it is one shape reused by
+ * two components and must survive purge. */
+.badge-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.625rem;
+  height: 1.625rem;
+  padding: 0 3px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 2px 8px -3px rgba(0, 0, 0, 0.7);
+}
+
+/* Click-to-enter gate: a blurred veil over the whole profile until the visitor
+ * clicks. Fixed + z-50 so it sits above every layer; the profile stays in the DOM
+ * underneath (SEO + the muted background loop are unaffected). */
+.intro-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 1.125rem;
+  background: rgba(6, 6, 10, 0.55);
+  backdrop-filter: blur(22px) saturate(120%);
+  -webkit-backdrop-filter: blur(22px) saturate(120%);
+  text-shadow: 0 0 18px rgba(139, 92, 246, 0.6);
+  transition: background 0.3s ease, text-shadow 0.3s ease;
+}
+.intro-gate:hover {
+  background: rgba(6, 6, 10, 0.35);
+  text-shadow: 0 0 26px rgba(139, 92, 246, 0.9);
+}
+
+/* Motion clamp: the OS setting wins unless the visitor chose otherwise.
+ * html[data-motion] is written by the pre-paint script in app/layout.tsx and by
+ * lib/motion-pref.ts — never by React, so hydration cannot see it. Without the
+ * :not([data-motion="force"]) guard here, a machine that reports reduced motion
+ * would freeze every recipe class with !important and the "always" choice would
+ * do nothing at all. */
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-motion="force"]) {
+    scroll-behavior: auto;
+  }
+  /* Username effects are exempt from the OS clamp on purpose: a showcase
+   * profile should animate its name even on a machine that reports reduced
+   * motion (Windows with "animation effects" off). `*:not([class*="name-"])`
+   * keeps every `name-*` element — the profile <h1>, the picker preview span,
+   * and the .name-animated float wrapper — running. No background .fx-* layer or
+   * layout class carries the `name-` substring, so nothing else is affected. The
+   * glitter overlay (::before/::after) is likewise kept alive. */
+  html:not([data-motion="force"]) *:not([class*="name-"]):not(.profile-effects-immutable):not(.profile-effects-immutable *),
+  html:not([data-motion="force"]) *:not(.glitter):not([class*="name-"]):not(.profile-effects-immutable):not(.profile-effects-immutable *)::before,
+  html:not([data-motion="force"]) *:not(.glitter):not([class*="name-"]):not(.profile-effects-immutable):not(.profile-effects-immutable *)::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  /* An explicit "calm" choice does NOT freeze the names either. Username
+   * effects are content the PROFILE AUTHOR picked; a visitor's motion
+   * preference mutes page chrome around them, never the author's showcase
+   * itself (project rule — same reasoning as .profile-effects-immutable).
+   * The `*:not([class*="name-"])` exemption above already keeps every name-*
+   * animation running here; the no-preference calm block below mirrors it. */
+}
+@media (prefers-reduced-motion: no-preference) {
+  html[data-motion="calm"] {
+    scroll-behavior: auto;
+  }
+  /* `.profile-effects-immutable` is exempt here too: the owner-chosen effect
+   * layers (particles, gradient blooms, template overlays, the looping background
+   * artwork) are profile CONTENT, not page chrome, so a "calm" visitor still sees
+   * them — freezing them was the "effects stop mid-playback" bug. Hover/transition
+   * decoration outside these wrappers still obeys the choice.
+   * `[class*="name-"]` and `.glitter` join the exemption for the same reason: a
+   * shimmer/gradient/rainbow username is author-chosen content, and freezing it
+   * mid-loop read as the name effect "stalling". Mirrors the reduce block above. */
+  html[data-motion="calm"] *:not([class*="name-"]):not(.profile-effects-immutable):not(.profile-effects-immutable *),
+  html[data-motion="calm"] *:not(.glitter):not([class*="name-"]):not(.profile-effects-immutable):not(.profile-effects-immutable *)::before,
+  html[data-motion="calm"] *:not(.glitter):not([class*="name-"]):not(.profile-effects-immutable):not(.profile-effects-immutable *)::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Author-chosen profile effects are content the owner picked, so they run on
+ * every machine and must never be clamped (see the two :not(.profile-effects-immutable)
+ * exemptions above). Promoting the continuously animated layers to their own
+ * compositor task is also what stops a decoding background video from starving
+ * them of frames — the "effects stutter while the video plays" complaint. */
+.profile-effects-immutable .fx-layer,
+.profile-effects-immutable [class*="animate-"],
+[class*="animate-particle"].profile-effects-immutable,
+[class*="animate-gradient"].profile-effects-immutable {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}

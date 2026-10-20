@@ -1,0 +1,70 @@
+# dependencies
+/node_modules
+
+# next.js — `/.next*/` on purpose, not `/.next/`: two stale build caches are kept
+# beside the live one (`.next.corrupt-cache/` 334 MB, `.next_corrupt_bak/` 256 MB)
+# after a corruption incident, and an anchor-only `/.next/` rule lets `git add .`
+# write ~590 MB of dead compiler cache into history, where removing it again means
+# a force-push. The wildcard costs nothing: no tracked directory starts with `.next`.
+/.next*/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.pem
+
+# editor
+.idea/
+
+# debug — also every runtime log this project writes next to the source
+# (dev.log / dev.out.log / dev.err.log / worker.log from run-dev.bat, which contain
+# absolute C:\Users\... paths and therefore the developer's account name)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+/logs/
+
+# local screenshots and browser-probe artifacts (tmp-*.png was the naming here)
+/tmp-*
+
+# env — never commit secrets. `.env.*` covers .env.local/.env.production, and the
+# negation is what keeps the tracked template committable.
+.env
+.env.*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# user uploads (local file hosting) — do not commit
+/public/uploads
+
+# generated 4K template renders (~0.5–1 GB): rebuilt by one command, never
+# committed. lib/template-facts.ts *is* committed — it is the measured table the
+# catalog reads — so a new environment must run `npm run templates:build` (it
+# skips whatever already exists) before a fact row can point at a real file.
+# Admin-added gallery templates render here too (up-<id>.mp4/.prev.mp4/.jpg);
+# their rows live in the CatalogTemplate table, so the deploy that ships a new
+# database must also copy this directory or those cards fail as missing files.
+/public/templates
+
+# user storage — lives OUTSIDE public/ precisely because Next.js serves public/ as
+# static files with no auth, which would defeat FileAsset.isPrivate (see
+# lib/storage.ts). Committed bytes here are user uploads, not source.
+/storage/
+
+# downloaded source artwork the renders are built from, build logs, and the
+# admin upload staging (.cache/catalog-staging) + render sidecars
+# (.cache/catalog-render) the CatalogTemplate reconcile reads — all disposable,
+# never committed.
+/.cache

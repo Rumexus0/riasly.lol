@@ -1,0 +1,29 @@
+# Normalise line endings so a Windows-only author team does not produce CRLF diffs
+# on every .ts file: the repo stores LF, the checkout keeps the platform default.
+* text=auto eol=lf
+
+# Binary assets: never diff, never merge, never touch their bytes.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.mp3 binary
+*.m4a binary
+*.ogg binary
+*.wav binary
+*.woff binary
+*.woff2 binary
+
+# 4K template renders are ~10-60 MB each and are gitignored (public/templates), but
+# the rule is written anyway: if one ever slips into a commit, `git diff` should not
+# try to render it as text and GitHub should not offer to merge it.
+*.mp4 binary
+*.mp4 -diff
+*.webm binary
+*.mov binary
+
+# Windows helper scripts must keep CRLF or cmd.exe mis-parses them.
+*.bat text eol=crlf
+*.cmd text eol=crlf

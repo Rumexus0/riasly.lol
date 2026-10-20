@@ -1,0 +1,462 @@
+// riasly — Prisma schema (MySQL)
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Plan {
+  FREE
+  PREMIUM
+}
+
+enum Platform {
+  Instagram
+  YouTube
+  TikTok
+  X
+  Twitch
+  Discord
+  GitHub
+  Telegram
+  Other
+}
+
+enum BadgeSource {
+  AUTO
+  ADMIN
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  passwordHash  String?
+  handle        String?   @unique
+  plan          Plan      @default(FREE)
+  createdAt     DateTime  @default(now())
+
+  // ---- Email verification gate. Additive, and the default is the whole point:
+  // only signUpUser ever writes true here, and only while the mail transport is
+  // live, so every row that predates the feature is false and can never be locked
+  // out. Sign-in is refused while this is true AND emailVerified is still null
+  // (see lib/email-verify.ts); verifying a code clears both. ----
+  verifyEmail   Boolean   @default(false)
+
+  // ---- Anti-squat: last time this account moved its public handle. First-time
+  // claim leaves it null so the initial signup never trips the cooldown. ----
+  handleChangedAt DateTime?
+
+  // ---- Two-factor auth (TOTP). All additive; a null secret + false flag keeps
+  // every existing account logging in with just a password. The secret is only
+  // ever read server-side; backup codes are stored hashed, never in plaintext. ----
+  twoFactorSecret String? @db.VarChar(64)
+  twoFactorEnabled Boolean @default(false)
+  twoFactorBackup  String? @db.Text // JSON array of hashed single-use recovery codes
+
+  accounts        Account[]
+  sessions        Session[]
+  deviceSessions  DeviceSession[]
+  emailChangeTokens EmailChangeToken[]
+  emailVerifyTokens EmailVerifyToken[]
+  profile         Profile?
+  bioLinks        BioLink[]
+  socialLinks     SocialLink[]
+  fileAssets      FileAsset[]
+  usedRedeemCodes RedeemCode[]
+  resetTokens     PasswordResetToken[]
+  loginOtpTokens  LoginOtpToken[]
+  userBadges      UserBadge[]
+  pages           Page[]
+  widgets         Widget[]
+}
+
+model Profile {
+  id          String   @id @default(cuid())
+  bio         String?  @db.Text
+  accentColor String?  @default("#481C4F")
+  avatarUrl   String?
+  bannerUrl   String?
+  viewCount   Int      @default(0)
+
+  // ---- Style system (all additive; every default keeps an existing profile
+  // byte-for-byte identical, because ProfileStage only renders a feature when
+  // its value is set/true). ----
+  textColor     String? // #rrggbb or null (null = inherited softwhite)
+  bgColor       String? // #rrggbb or null (null = nearblack base)
+  iconColor     String? // #rrggbb or null (used when monochromeIcons)
+  effectColor   String? // comma-joined #rrggbb palette (primary[,secondary[,tertiary]]); null = accent
+  profileOpacity Int? // 0..100 (null = no content panel override)
+  profileBlur    Int? // 0..40 px (null = no content panel override)
+  bgEffect       String? // FxKey override; null = derive from template recipe
+  usernameEffect String? // key in USERNAME_EFFECTS; null/"" = none
+  location       String? @db.VarChar(60)
+  cursorUrl      String? // /api/media/<uuid>.png (VARCHAR(191) ceiling)
+  soundUrl       String? // /api/media/<uuid>.<audio-ext>
+  soundStartMs   Int? // ms into the track to begin looping; null = from the top
+  soundEndMs     Int? // ms to wrap back to the start; null = to the end
+  bgClipStartMs  Int? // ms into the background VIDEO to begin looping; null = whole clip
+  bgClipEndMs    Int? // ms to wrap back to bgClipStartMs; null = to the end
+  discordSnowflake String? @db.VarChar(20) // Discord kullanıcı id'si; yalnızca OAuth tarafından yazılır (identity + bot presence anahtarı)
+  profileGradient Boolean @default(false)
+  monochromeIcons Boolean @default(false)
+  animatedTitle Boolean @default(false)
+  boxColors Boolean @default(false)
+  soundEnabled Boolean @default(false)
+  useDiscordAvatar Boolean @default(false) // DEPRECATED: the hero always uses the site avatar; column kept, never read
+  discordAvatarDecoration Boolean @default(false)
+  glitterName Boolean @default(false)
+  glitterSocials Boolean @default(false)
+  glitterBadges Boolean @default(false)
+  // JSON map { badgeKey: "#rrggbb" } — owner-chosen tints for the profile badge
+  // pill. Written ONLY by setBadgeColor (never by the style form); unparsed or
+  // corrupt values degrade to the catalog tone colours.
+  badgeColors String? @db.Text
+  profileAlign  String? // "left" | "center" | "right"; null = center
+
+  // ---- Account + Discord presence-card config (all additive; every default
+  // keeps an existing profile rendering exactly as before). ----
+  nicknames String? @db.VarChar(190) // comma-separated alternate display names, owned by the Account page
+  discordCardEnabled Boolean @default(true) // paint the presence card at all (needs a linked Discord)
+  discordCardShowBadges Boolean @default(true) // paint the Discord marks beside the name
+  discordCardShowGuild  Boolean @default(false) // DEPRECATED: the guild chip was removed from the card; column kept, never read
+  discordCardIdleText String? @db.VarChar(80) // shown instead of the status line when nothing is playing
+
+  // ---- Master switch for the whole widget hub. When false, ProfileView hands
+  // ProfileStage an empty widget list and the Discord presence card is hidden
+  // too, so the owner can turn every widget off in one click without deleting
+  // rows. Defaults true so every pre-modal profile renders exactly as before. ----
+  widgetsEnabled Boolean @default(true)
+
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model BioLink {
+  id       String @id @default(cuid())
+  label    String
+  url      String
+  position Int    @default(0)
+  userId   String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model SocialLink {
+  id         String   @id @default(cuid())
+  platform   Platform
+  url        String
+  username   String?
+  isVerified Boolean  @default(false)
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+}
+
+// Additional profile pages (tabs) a user adds beside their main page.
+// The home page (`/<handle>`) is implicit and always exists; a row here is only
+// ever an EXTRA tab rendered at `/<handle>/<slug>`. A user with zero pages sees
+// the exact same profile as before this feature.
+model Page {
+  id        String   @id @default(cuid())
+  slug      String   // [a-z0-9-]{1,24}, unique per user (enforced in the action)
+  title     String
+  position  Int      @default(0)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  widgets Widget[]
+
+  @@unique([userId, slug])
+  @@index([userId])
+}
+
+// Server-derived embeds/cards shown on a profile page. `sourceUrl` never holds
+// the raw user input — it stores the CANONICAL embed URL the adapter registry
+// (lib/widgets.ts) produced after validating against a fixed origin allowlist,
+// so nothing user-typed reaches the DOM as HTML/JS. `pageId` null = home page.
+model Widget {
+  id        String   @id @default(cuid())
+  type      String // WidgetType key (lib/widgets.ts)
+  label     String
+  sourceUrl String   @db.VarChar(190)
+  extra     String?  @db.VarChar(190) // type-specific bit (text note, etc.)
+  position  Int      @default(0)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pageId    String? // null => home; set => the owning tab
+  page      Page?    @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([pageId])
+}
+
+// Grants only: badge definitions live in code (lib/badges.ts), mirroring how
+// lib/backgrounds.ts keeps the template catalog out of the database.
+model UserBadge {
+  id        String      @id @default(cuid())
+  badgeKey  String
+  source    BadgeSource @default(AUTO)
+  grantedAt DateTime    @default(now())
+  userId    String
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, badgeKey])
+  @@index([badgeKey])
+}
+
+// Grants only: the template catalog stays in code (lib/backgrounds.ts), exactly
+// like UserBadge above. A row here hides one gallery card for everyone and can
+// be deleted again — it never changes anybody's stored background URL, so an
+// admin curating the gallery can never break a profile that already applies it.
+model HiddenTemplate {
+  id         String   @id @default(cuid())
+  templateId String   @unique
+  hiddenBy   String?
+  hiddenAt   DateTime @default(now())
+}
+
+enum CatalogStatus {
+  RENDERING
+  READY
+  FAILED
+}
+
+// Admin-added gallery templates. lib/backgrounds.ts stays the source for the
+// curated seeds; these rows merge in beside it (lib/catalog.ts), so a new
+// template is a database write plus one ffmpeg render — not a code deploy.
+//
+// No url/thumb columns: both derive from templateAssetPaths(id), so the
+// VARCHAR(191) ceiling a stored media URL has to respect can never be hit here,
+// and there are two copies of a path that could disagree. The id is the asset.
+model CatalogTemplate {
+  id          String        @id // "up-<base36>", shaped to match TEMPLATE_ASSET_RE
+  name        String
+  author      String
+  category    String
+  tags        String        @default("") // comma separated, <= 6 entries
+  accent      String?
+  sourceKind  String        @default("video") // "video" | "still"
+  sourceMime  String
+  sourceBytes Int
+  status      CatalogStatus @default(RENDERING)
+  // Everything below is measured by the renderer, never typed by the admin.
+  resolution  String?
+  sizeMb      Float?
+  previewMb   Float?
+  posterMb    Float?
+  upscaled    Boolean       @default(false)
+  driftScore  Float?
+  failure     String?
+  // DEPRECATED: a tally of apply *events*, which is not "how many profiles use
+  // this now" — lib/catalog.ts measures the live count from the Profile table
+  // instead. Column kept, never written, never read.
+  usage       Int           @default(0)
+  createdById String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status])
+}
+
+model FileAsset {
+  id            String    @id @default(cuid())
+  storageKey    String    @unique
+  name          String
+  size          Int
+  mime          String
+  isPrivate     Boolean   @default(false)
+  passwordHash  String?
+  downloadCount Int       @default(0)
+  ownerId       String
+  owner         User      @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  createdAt     DateTime  @default(now())
+}
+
+model RedeemCode {
+  id        String    @id @default(cuid())
+  code      String    @unique
+  usedById  String?
+  usedBy    User?     @relation(fields: [usedById], references: [id], onDelete: SetNull)
+  expiresAt DateTime?
+  createdAt DateTime  @default(now())
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+// ---- Auth.js v5 standard models ----
+
+model Account {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// Device/session tracking for the Account page's "Active sessions" list. The
+// session strategy is JWT (the Credentials provider forbids database
+// sessions), so Auth.js never fills its own `Session` table — this is our
+// substitute. Each sign-in mints a random `jti` embedded in the JWT; only its
+// SHA-256 hash is stored here, so a leaked row cannot be replayed as a token.
+// Revoking a row makes the next server read (getVerifiedSessionUserId) drop the
+// session, which the middleware then bounces to /login.
+model DeviceSession {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String    @unique @db.VarChar(64) // sha256(jti), hex
+  userAgent String?   @db.VarChar(255)
+  ip        String?   @db.VarChar(64)
+  createdAt DateTime  @default(now())
+  lastSeenAt DateTime @default(now())
+  revokedAt DateTime?
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([lastSeenAt])
+}
+
+// A pending email change. The 6-digit confirmation code is MAILED to the new
+// address (lib/mailer.ts) and never returned to the client. A user keeps at most
+// one live row (deleteMany on request), so the code is only unique per user —
+// `token` is no longer globally @unique and lookups go by userId. Applying the
+// change deletes the row.
+model EmailChangeToken {
+  id        String   @id @default(cuid())
+  token     String
+  userId    String
+  newEmail  String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// A one-time code emailed as a second factor at login (the email arm of 2FA, kept
+// beside TOTP). Only the newest live row per user matters — issuing a code deletes
+// the previous ones. The code is short-lived, single-use (deleted on success) and
+// attempt-capped, and is only ever offered to accounts with 2FA enabled.
+model LoginOtpToken {
+  id        String   @id @default(cuid())
+  userId    String
+  code      String
+  expiresAt DateTime
+  attempts  Int      @default(0)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// A one-time code emailed to prove the address on a brand-new account (the gate
+// behind User.verifyEmail). Shaped exactly like LoginOtpToken above, because it
+// answers the same question — does this person control that inbox — with the same
+// rules: only the newest live row per user counts, the code is short-lived and
+// single-use (deleted on success), attempt-capped, and never leaves the server.
+// `ip` is what caps how many codes one caller can ask for in an hour.
+model EmailVerifyToken {
+  id        String   @id @default(cuid())
+  userId    String
+  code      String
+  expiresAt DateTime
+  attempts  Int      @default(0)
+  ip        String?  @db.VarChar(64)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([ip, createdAt])
+}
+
+// Bot Gateway'den gelen canlı presence. Satırın kendisi "en son bilinen" durumu
+// taşır; bayatlık kararı worker kalp atışıyla verilir (DiscordWorkerBeat aşağıda).
+model DiscordPresence {
+  snowflake String   @id @db.VarChar(20)
+  status    String // online | idle | dnd | offline
+  activity  String?  @db.Text // beyazlisteli JSON: {name,details,state,type,appId,assetName}
+  updatedAt DateTime @updatedAt
+
+  @@index([updatedAt])
+}
+
+// Worker'ın canlı olduğunu kanıtlayan tek satırlık kalp atışı. Presence eventleri
+// yalnızca DEĞİŞİNCE gelir; sessiz bir sunucuda satırlar saatlerce güncellenmez,
+// bayatlık ölçüsü olarak updatedAt kullanılamaz.
+model DiscordWorkerBeat {
+  id     String   @id
+  beatAt DateTime @updatedAt
+}
+
+// Anti-squat: one row per signup attempt (successful or rejected) keyed by the
+// caller's IP. signUpUser counts rows in the last hour before creating an
+// account, so a script cannot farm handles by cycling fresh emails. Kept in the
+// DB (not in-memory) so the limit survives a cold start and stays consistent
+// across restarts. Rows are pruned lazily by a scheduled cleanup or an admin
+// query; nothing here is user-visible.
+model SignupAttempt {
+  id        String   @id @default(cuid())
+  ip        String   @db.VarChar(64)
+  email     String?  @db.VarChar(120)
+  ok        Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([ip, createdAt])
+}
+
+// Unique profile views: one row per (profile owner, viewer). The row itself is
+// the de-dup — a repeat view by the same account/browser hits the unique
+// constraint and simply is not counted again, so "1 hesap = 1 goruntulenme" is
+// enforced at the database, not by a read-then-write race. `viewerKey` is
+// "u:<userId>" for a signed-in visitor or "c:<deviceId>" for an anonymous one
+// (a long-lived device cookie). `Profile.viewCount` is incremented only when a
+// row is newly created, so the leaderboard/stats read paths stay unchanged.
+model ProfileView {
+  id             String   @id @default(cuid())
+  profileOwnerId String // User.id of the profile being viewed
+  viewerKey      String   @db.VarChar(80)
+  firstViewAt    DateTime @default(now())
+
+  @@unique([profileOwnerId, viewerKey])
+  @@index([profileOwnerId])
+}

@@ -1,0 +1,1107 @@
+{
+  "common": {
+    "appName": "riasly",
+    "tagline": "İstediğin her şey, burada."
+  },
+  "nav": {
+    "features": "Özellikler",
+    "pricing": "Fiyatlar",
+    "faq": "SSS",
+    "login": "Giriş",
+    "signup": "Ücretsiz Kaydol",
+    "dashboard": "Panel",
+    "logout": "Çıkış yap",
+    "openMenu": "Menüyü aç/kapat"
+  },
+  "hero": {
+    "promo": "Yeni · Ömür boyu Premium burada",
+    "titleLine1": "İstediğin her şey,",
+    "titleLine2": "burada.",
+    "subtitle": "riasly, içerik üreticilerine ve oyunculara tamamen özelleştirilebilir bir link-in-bio sayfası ile hızlı ve güvenli dosya barındırma sunar — hepsi tek bir temiz kullanıcı adının arkasında.",
+    "signUpFree": "Ücretsiz Kaydol",
+    "viewPricing": "Fiyatları Gör",
+    "dashboardPreview": "riasly panel önizlemesi",
+    "profilePreview": "Tamamlanmış riasly profil sayfası önizlemesi"
+  },
+  "features": {
+    "eyebrow": "İki ürün. Tek kullanıcı adı.",
+    "title": "Üreticilerin gerçek paylaşım biçimi için tasarlandı",
+    "items": [
+      {
+        "title": "Özelleştirilebilir link-in-bio sayfaları",
+        "description": "Dakikalar içinde şık, tamamen temalı bir profil oluştur. Özel alan adları, animasyonlar, müzik ve sınırsız stil — kod gerekmez."
+      },
+      {
+        "title": "Hızlı, güvenli dosya barındırma",
+        "description": "Dosyalarını küresel bir edge ağında yükle ve paylaş. Özel bağlantılar, parola koruması ve varsayılan olarak yıldırım hızında indirmeler."
+      }
+    ]
+  },
+  "stats": {
+    "labels": {
+      "profileViews": "Profil görüntülenmesi",
+      "users": "Kullanıcı",
+      "fileUploads": "Dosya yükleme",
+      "subscribers": "Abone"
+    },
+    "live": "Şu an canlı"
+  },
+  "claim": {
+    "title": "Kullanıcı adını kap",
+    "subtitle": "Başkası almadan riasly bağlantını kap. Saniyeler sürer.",
+    "prefix": "riasly/",
+    "placeholder": "kullaniciadin",
+    "submit": "Şimdi Al",
+    "ariaLabel": "riasly kullanıcı adını seç",
+    "empty": "Devam etmek için bir kullanıcı adı seç.",
+    "invalid": "3–30 karakter kullan: küçük harf, rakam ve tire (başta/sonda olamaz).",
+    "checking": "Uygunluk kontrol ediliyor…",
+    "available": "Harika — müsait.",
+    "taken": "Üzgünüm, bu kullanıcı adı zaten alınmış.",
+    "rateLimited": "Çok fazla sorgu yaptın. Bir dakika sonra tekrar dene.",
+    "success": "Güzel — riasly/{handle} hazır. Bitirmek için ücretsiz hesabını oluştur.",
+    "errorNetwork": "Uygunluk kontrol edilemedi. Tekrar dene."
+  },
+  "pricing": {
+    "eyebrow": "Fiyatlar",
+    "title": "Ücretsiz başla. Hazır olduğunda ömür boyuya geç.",
+    "subtitle": "Abonelik yok. Premium, tek seferlik ömür boyu ödemedir.",
+    "popular": "En Popüler",
+    "plans": [
+      {
+        "name": "Ücretsiz",
+        "price": "₺0",
+        "priceNote": "ömür boyu",
+        "tagline": "Sayfanı yayına almak için gereken her şey.",
+        "cta": "Ücretsiz Kaydol",
+        "features": [
+          "Bir link-in-bio profili",
+          "Sınırsız bağlantı",
+          "Temel temalar ve özelleştirici",
+          "5 GB dosya barındırma",
+          "riasly/kullaniciadin",
+          "Topluluk desteği"
+        ]
+      },
+      {
+        "name": "Premium",
+        "price": "₺999",
+        "priceNote": "tek seferlik · ömür boyu",
+        "tagline": "Bir kez öde, sonsuza dek göster. Yenileme yok.",
+        "cta": "Ömür Boyu Premium Al",
+        "features": [
+          "Ücretsizdeki her şey, artı:",
+          "Özel alan adları ve tam markalama",
+          "Gelişmiş animasyonlar ve efektler",
+          "Sınırsız dosya barındırma",
+          "Parola korumalı dosyalar",
+          "Öncelikli hız ve analizler",
+          "Yeni özelliklere erken erişim"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "SSS",
+    "title": "Sorular, yanıtlandı",
+    "items": [
+      {
+        "question": "riasly nedir?",
+        "answer": "riasly; özelleştirilebilir link-in-bio profil sayfalarını hızlı ve güvenli dosya barındırma ile birleştiren, üretici odaklı bir platformdur — hepsi tek, akılda kalıcı bir kullanıcı adının arkasında."
+      },
+      {
+        "question": "Ücretsiz mi?",
+        "answer": "Evet. Ücretsiz plan, tam bir profil oluşturmana ve dosyalarını kalıcı olarak ücretsiz barındırmana izin verir. Premium; özel alan adları ve sınırsız barındırma gibi ömür boyu ekstraları tek bir ödemeyle açar."
+      },
+      {
+        "question": "Güvenli mi?",
+        "answer": "Kesinlikle. Dosyalar şifrelenmiş küresel bir edge ağı üzerinden, özel bağlantılar ve isteğe bağlı parola korumasıyla sunulur. Kullanıcı adın ve içeriğin senin kontrolünde kalır."
+      },
+      {
+        "question": "Kurulum ne kadar sürer?",
+        "answer": "İki dakikadan az. Kaydol, riasly/ kullanıcı adını al, bağlantılarını ekle ve yayına al. Kod yok, ayar yok, bekleme yok."
+      }
+    ]
+  },
+  "footer": {
+    "blurb": "İstediğin her şey, burada. İçerik üreticileri ve oyuncular için bağlantı sayfaları ve dosya barındırma.",
+    "language": "Dil",
+    "product": "Ürün",
+    "resources": "Kaynaklar",
+    "rights": "© {year} riasly. Tüm hakları saklıdır.",
+    "terms": "Şartlar",
+    "privacy": "Gizlilik",
+    "statusOnline": "Tüm sistemler çalışıyor",
+    "links": {
+      "signup": "Kaydol",
+      "login": "Giriş",
+      "pricing": "Fiyatlar",
+      "redeem": "Kod Kullan",
+      "help": "Yardım Merkezi",
+      "changelog": "Değişiklikler",
+      "leaderboard": "Sıralama",
+      "status": "Durum",
+      "recovery": "Hesap Kurtarma"
+    }
+  },
+  "auth": {
+    "signupTitle": "riasly hesabını oluştur",
+    "signupSubtitle": "Kullanıcı adını kap ve sayfanı saniyeler içinde yayına al.",
+    "loginTitle": "Tekrar hoş geldin",
+    "loginSubtitle": "Profilini ve dosyalarını yönetmek için giriş yap.",
+    "name": "Ad",
+    "email": "E-posta",
+    "password": "Şifre",
+    "handle": "Kullanıcı adı",
+    "orContinueWith": "Veya şununla devam et",
+    "google": "Google ile devam et",
+    "github": "GitHub ile devam et",
+    "discord": "Discord ile devam et",
+    "createAccount": "Hesap oluştur",
+    "signIn": "Giriş yap",
+    "haveAccount": "Zaten hesabın var mı?",
+    "noAccount": "riasly'ye yeni misin?",
+    "forgotPassword": "Şifreni mi unuttun?",
+    "invalidCredentials": "Geçersiz e-posta veya şifre.",
+    "staleSession": "Önceki oturumu silinmiş bir hesaba ait — tekrar giriş yapın.",
+    "emailTaken": "Bu e-posta zaten kayıtlı.",
+    "tooMany": "Bu IP'den çok fazla kayıt denemesi var. Bir saat sonra tekrar dene.",
+    "handleTaken": "Bu kullanıcı adı alınmış. Başka bir tane seç.",
+    "genericError": "Bir şeyler ters gitti. Lütfen tekrar dene.",
+    "oauthNotLinked": "Bu e-posta başka bir yöntemle oluşturulmuş bir hesaba ait, bu yüzden sağlayıcı otomatik olarak bağlanmadı. Önce o yöntemle giriş yap, sonra sağlayıcıyı panelinden bağla.",
+    "mfaCodeLabel": "Doğrulama kodu",
+    "mfaBack": "Başka bir hesap kullan",
+    "mfaHelp": "Doğrulaman uygulamasındaki 6 haneli kodu veya yedek kodlarından birini gir.",
+    "mfaEmailBtn": "Bana e-posta ile kod gönder",
+    "mfaEmailSent": "E-postanıza bir giriş kodu gönderildi.",
+    "mfaVerify": "Doğrula ve giriş yap",
+    "verifyTitle": "E-postanı doğrula",
+    "verifySubtitle": "Adresine 6 haneli bir kod gönderdik. riasly hesabını açmak için kodu buraya gir.",
+    "verifyEmailLabel": "E-posta adresi",
+    "verifySend": "Kod gönder",
+    "verifyMailed": "Bu adreste onay bekleyen bir hesap varsa kod yolda.",
+    "verifySent": "Yeni kod yolda.",
+    "verifyMailedTo": "Kod şu adrese gönderildi:",
+    "verifyCodeLabel": "6 haneli kod",
+    "verifyCodeHelp": "Kod tek kullanımlıktır ve 24 saat içinde geçerliliğini yitirir.",
+    "verifySubmit": "Doğrula",
+    "verifyResend": "Yeni kod gönder",
+    "verifyOtherEmail": "Başka bir adres kullan",
+    "verifySuccess": "E-posta doğrulandı — giriş yap.",
+    "verifyBadCode": "Bu kod yanlış ya da süresi dolmuş. Yeni bir kod iste.",
+    "verifyInvalidEmail": "Geçerli bir e-posta adresi gir.",
+    "verifyOpen": "Doğrulama sayfasını aç",
+    "tooManyVerify": "Bu IP'den çok fazla kod isteği yapıldı. Bir saat sonra tekrar dene.",
+    "emailNotVerified": "Bu e-posta adresi henüz doğrulanmadığı için giriş yapılamıyor.",
+    "emailFailed": "E-posta gönderilemedi. Adresi kontrol edip tekrar dene.",
+    "backToLogin": "Girişe dön"
+  },
+  "leaderboard": {
+    "title": "Sıralama",
+    "subtitle": "Gerçek profil görüntülenme sayısına göre sıralanmış en çok görüntülenen riasly profilleri.",
+    "rank": "#",
+    "views": "Görüntülenme",
+    "plan": "Plan",
+    "premium": "Premium",
+    "free": "Ücretsiz",
+    "empty": "Sıralanacak profil yok — ilk kullanıcı adını kap ve ilk sen ol.",
+    "claimCta": "Kullanıcı adını kap"
+  },
+  "status": {
+    "title": "Sistem durumu",
+    "subtitle": "riasly platformunun gerçek veritabanına karşı kontrol edilen canlı sağlığı.",
+    "operational": "Çalışıyor",
+    "degraded": "Kullanılamıyor",
+    "database": "Veritabanı",
+    "web": "Web uygulaması",
+    "summary": "Tüm sistemler çalışıyor",
+    "summaryDown": "Veritabanına ulaşılamıyor",
+    "metrics": "Canlı metrikler",
+    "lastChecked": "Son kontrol",
+    "users": "Kullanıcılar",
+    "profileViews": "Profil görüntülenmeleri",
+    "fileUploads": "Dosya yüklemeleri",
+    "subscribers": "Aboneler"
+  },
+  "redeem": {
+    "title": "Kod kullan",
+    "subtitle": "Premium kodun mu var? Ömür boyu Premium'u açmak için kullan.",
+    "codeLabel": "Kod",
+    "placeholder": "RIASLY-XXXX-XXXX",
+    "submit": "Kullan",
+    "success": "Premium açıldı. Keyfini çıkar!",
+    "invalidCode": "Bu kod geçerli değil.",
+    "alreadyUsed": "Bu kod zaten kullanılmış.",
+    "needLogin": "Kod kullanmak için lütfen giriş yap.",
+    "goLogin": "Giriş yap"
+  },
+  "recovery": {
+    "title": "Hesap kurtarma",
+    "subtitle": "Hesabına bağlı e-postayı gir, senin için bir sıfırlama bağlantısı oluşturalım.",
+    "emailLabel": "E-posta",
+    "submit": "Sıfırlama bağlantısı gönder",
+    "sentNote": "Bu e-posta varsa, sıfırlama bağlantısı aşağıda hazır.",
+    "resetLink": "Sıfırlama bağlantın",
+    "invalidEmail": "Geçerli bir e-posta adresi gir.",
+    "noAccount": "Bu e-posta için hesap bulunamadı.",
+    "newPasswordTitle": "Yeni şifre belirle",
+    "passwordLabel": "Yeni şifre",
+    "updatePassword": "Şifreyi güncelle",
+    "passwordUpdated": "Şifre güncellendi. Şimdi giriş yapabilirsin.",
+    "invalidToken": "Bu sıfırlama bağlantısı geçersiz veya süresi dolmuş.",
+    "goLogin": "Girişe git"
+  },
+  "changelog": {
+    "title": "Değişiklikler",
+    "subtitle": "riasly'deki yenilikler.",
+    "latest": "Son"
+  },
+  "profile": {
+    "views": "görüntülenme",
+    "clickToEnter": "içeri girmek için tıkla…",
+    "files": "Dosyalar",
+    "premiumBadge": "Premium · Ömür Boyu",
+    "tabs": {
+      "home": "Ana"
+    },
+    "sound": {
+      "play": "Müziği başlat",
+      "pause": "Müziği duraklat",
+      "mute": "Sesi kıs",
+      "unmute": "Sesi aç",
+      "volume": "Ses seviyesi"
+    },
+    "discord": {
+      "online": "Çevrimiçi",
+      "idle": "Boşta",
+      "dnd": "Rahatsız Etme",
+      "offline": "Çevrimdışı",
+      "lastSeen": "son görülme {time}",
+      "elapsed": "Geçen süre",
+      "since": "{time} itibarıyla",
+      "listeningTo": "{track} dinliyor",
+      "activityTypes": {
+        "playing": "Oynuyor",
+        "streaming": "Yayın yapıyor",
+        "listening": "Dinliyor",
+        "watching": "İzliyor",
+        "competing": "Rekabet ediyor"
+      },
+      "badges": {
+        "staff": "Discord Ekibi",
+        "partner": "Ortak Sunucu Sahibi",
+        "moderator": "Onaylı Moderatör",
+        "developer": "Onaylı Uygulama Geliştirici",
+        "activeDeveloper": "Aktif Geliştirici",
+        "verifiedBot": "Onaylı Bot",
+        "bugHunter": "Hata Avcısı",
+        "early": "Erken Destekçi",
+        "nitro": "Nitro",
+        "nitroClassic": "Nitro Classic",
+        "hypesquadEvents": "HypeSquad Etkinlikleri",
+        "bravery": "HypeSquad Cesaret",
+        "brilliance": "HypeSquad Bilgelik",
+        "balance": "HypeSquad Denge",
+        "clan": "Discord klanı"
+      }
+    }
+  },
+  "templates": {
+    "title": "Profilin için mükemmel arka planı bul",
+    "subtitle": "Hazır şablonların hepsi gerçek bir 4K döngüdür — hareket CSS ile boyanmaz, piksellerin içine işlenir. Tek tıkla profiline uygula.",
+    "tabs": {
+      "library": "Şablon Kütüphanesi",
+      "favorites": "Favoriler",
+      "recent": "Son Kullanılanlar",
+      "removed": "Kaldırılanlar"
+    },
+    "search": "Şablon ara…",
+    "sort": {
+      "label": "Sırala",
+      "trend": "Trend",
+      "popular": "Popüler",
+      "newest": "Yeni",
+      "az": "A–Z"
+    },
+    "all": "Tümü",
+    "use": "Şablonu kullan",
+    "applied": "Uygulandı ✓",
+    "usage": "kullanım",
+    "empty": "Aramana uyan şablon yok.",
+    "noneRecent": "Henüz son kullanılan şablon yok.",
+    "favorite": "Favorilere ekle",
+    "unfavorite": "Favorilerden çıkar",
+    "applying": "Uygulanıyor…",
+    "badgeUhd": "4K Hareketli",
+    "badgeVideo": "HD Animasyonlu",
+    "badgeGif": "GIF",
+    "badgeStill": "4K Statik",
+    "useAvatar": "Avatar yap",
+    "avatarApplying": "Kullanılıyor…",
+    "avatarApplied": "Avatar ✓",
+    "mediaNote": "Hareketli arka planlar otomatik döner.",
+    "tierHd": "HD",
+    "upscaledNote": "HD'den büyütüldü",
+    "adminOnlyHint": "Admin modu: sevmediğin şablonları kaldırabilirsin.",
+    "remove": "Kaldır",
+    "removing": "Kaldırılıyor…",
+    "confirmRemove": "Kaldırmak için tekrar dokun",
+    "restore": "Geri al",
+    "restoring": "Geri alınıyor…",
+    "removedEmpty": "Galeriden kaldırılmış şablon yok.",
+    "forbiddenAdmin": "Şablonları galeriden yalnızca riasly yöneticileri kaldırabilir.",
+    "admin": {
+      "title": "Galeriye şablon ekle",
+      "file": "Kaynak dosya",
+      "name": "Ad",
+      "category": "Kategori",
+      "author": "Yayıncı",
+      "tags": "Etiketler",
+      "accent": "Vurgu rengi",
+      "submit": "Galeriye ekle",
+      "submitting": "Gönderiliyor…",
+      "added": "Render sırasına alındı.",
+      "hint": "Bir döngü (mp4/webm/mov/gif) veya statik görsel (png/jpg/webp), en fazla {mb} MB. 4K duvar, hareketli önizleme ve kapak görseli olarak işlenir.",
+      "rendering": "İşleniyor…",
+      "renderHint": "Bir dakikadan kısa sürer. Render bitince kart kendiliğinden güncellenir.",
+      "retry": "Yeniden dene",
+      "delete": "Sil",
+      "confirmDelete": "Silmek için tekrar dokun",
+      "deleted": "Şablon silindi.",
+      "failedTitle": "Render başarısız",
+      "pendingTitle": "Devam ediyor",
+      "emptyPending": "Şu anda işlenen şablon yok.",
+      "inUse": "Bir profil hâlâ bu şablonu kullanıyor.",
+      "forceDelete": "Zorla silmek için tekrar dokun",
+      "forceDeleteInUse": "{count, plural, one {# profil bu şablonu kullanıyor. Zorla silme bağlantıyı kesecek.} other {# profil bu şablonu kullanıyor. Zorla silme bağlantıyı kesecek.}}",
+      "busy": "Başka bir render zaten çalışıyor. Bitince tekrar dene.",
+      "unsupported": "Bu dosya türü işlenemiyor.",
+      "tooLarge": "Dosya {mb} MB sınırının üzerinde.",
+      "noFile": "Önce bir dosya seç.",
+      "forbidden": "Galeriye şablonu yalnızca riasly yöneticileri ekleyebilir.",
+      "invalid": "Ad, kategori ve vurgu rengini (8B5CF6 gibi 6 haneli onaltılık taban) kontrol et.",
+      "uploadError": "Yükleme başarısız. Tekrar dene."
+    },
+    "motionNames": {
+      "ken": "Ken Burns",
+      "driftUp": "Dikey kayma",
+      "panX": "Yatay kaydırma",
+      "push": "İçe yaklaşma",
+      "orbit": "Yörünge",
+      "breathe": "Nefes",
+      "none": "Kendi döngüsü"
+    },
+    "fx": {
+      "grain": "film grenli",
+      "scanlines": "tarama çizgileri",
+      "leak": "ışık sızması",
+      "aurora": "aurora",
+      "particles": "parçacıklar",
+      "snow": "kar",
+      "vignette": "vinyet",
+      "sheen": "parlama",
+      "speed": "hız çizgileri",
+      "glitch": "RGB glitch"
+    },
+    "custom": {
+      "title": "Kendi şablonun",
+      "subtitle": "Kendi videonu veya GIF'ini yükle ve arka planın yap.",
+      "upload": "Yükle ve uygula",
+      "uploading": "Yükleniyor…",
+      "applying": "Uygulanıyor…",
+      "applied": "Uygulandı ✓",
+      "useAsBackground": "Arka plan yap",
+      "inUse": "Kullanımda",
+      "remove": "Arka planı kaldır",
+      "removing": "Kaldırılıyor…",
+      "myFiles": "Yüklediğin medya",
+      "empty": "Henüz uyumlu bir medya yüklenmedi — ilk videon veya GIF'in burada görünecek.",
+      "noPreview": "Önizleme yok",
+      "noFile": "Önce bir video ya da GIF dosyası seç.",
+      "presetActive": "Animasyonlu hazır stil",
+      "locked": "Özel yüklemeler, hesabın oluşturulmasından 7 gün sonra açılır.",
+      "daysLeft": "{days, plural, other {# gün kaldı}}.",
+      "hint": "MP4, WebM, MOV, GIF veya WebP · en fazla {mb} MB · sonsuza kadar sessiz döngü, ses yok. Dosyan yüklendiği gibi sunulur, yeniden kodlanmaz. Hesabında saklanır ve istediğin an tekrar uygulanır.",
+      "measuring": "Ölçülüyor…",
+      "badge4k": "4K kaynak",
+      "noReencode": "Dosyan yeniden kodlanmadan, olduğu gibi sunulur — profil büyütme yapmaz, gerçek pikseller neyse o görünür.",
+      "selectHint": "Seçilen dosya: {w}×{h} px",
+      "belowUhd": "4K yüksekliği 2160 px; bu dosya {h} px. Gerçek bir 4K duvar için 3840×2160 (dikey 2160×3840) MP4/WebM yükle — küçük bir dosya sonradan büyütülemez.",
+      "clip": {
+        "title": "Klip yalnızca bir bölümünü döndür",
+        "hint": "Saniye cinsinden bir başlangıç ve bitiş belirle. Bir kutuyu boş bırakırsan kalanı döndürür; ikisini de boş bırakırsan tüm dosya oynar.",
+        "start": "Başlangıç (sn)",
+        "end": "Bitiş (sn)",
+        "apply": "Klibi uygula",
+        "applying": "Kaydediliyor…",
+        "reset": "Tüm klip"
+      },
+      "errors": {
+        "locked": "Özel arka planlar hesabın en az 7 günlük olduğunda açılır.",
+        "unsupported": "Bu dosya türü arka plan olarak kullanılamıyor. MP4, WebM, MOV, GIF veya WebP dene.",
+        "missing": "Yüklenen dosyayı artık bulamıyoruz. Lütfen tekrar yükle.",
+        "tooLarge": "Dosya çok büyük — sınır {mb} MB.",
+        "upload": "Yükleme başarısız. Lütfen tekrar dene.",
+        "unauthorized": "Oturumun sona erdi. Lütfen tekrar giriş yap.",
+        "invalid": "Dosyayı kontrol et — geç görünen bir şey var."
+      }
+    }
+  },
+  "motion": {
+    "title": "Hareket",
+    "system": "Sistem",
+    "force": "Her zaman",
+    "calm": "Sakin",
+    "hint": "Bu sayfadaki hareket miktarını seç. Bu cihazda saklanır."
+  },
+  "dashboard": {
+    "logout": "Çıkış yap",
+    "viewPublic": "Herkese açık profili gör",
+    "nav": {
+      "overview": "Genel Bakış",
+      "account": "Hesap",
+      "links": "Linkler",
+      "widgets": "Widget'lar",
+      "badges": "Rozetler",
+      "customize": "Özelleştir",
+      "templates": "Şablonlar",
+      "files": "Dosyalar",
+      "viewProfile": "Profili gör"
+    },
+    "groups": {
+      "profile": "Profil",
+      "account": "Hesap",
+      "customize": "Özelleştir",
+      "content": "İçerik"
+    },
+    "accountPage": {
+      "changeHandle": {
+        "cooldown": "Kullanıcı adını {days} gün içinde tekrar değiştirebilirsin."
+      },
+      "title": "Hesabım",
+      "subtitle": "Profilin tek bakışta — tamamlanma, bağlantılar ve hesap yönetimi.",
+      "stats": {
+        "handle": "Kullanıcı adı",
+        "nickname": "Görünen ad",
+        "views": "Profil görüntülenmeleri"
+      },
+      "completion": {
+        "heading": "Profil tamamlanma durumu",
+        "incomplete": "Profilin henüz tamamlanmadı!",
+        "done": "Profilin tamam.",
+        "checklist": {
+          "avatar": "Avatar yükle",
+          "bio": "Açıklama ekle",
+          "discord": "Discord hesabını bağla",
+          "socials": "Sosyallerini ekle",
+          "links": "Bağlantı ekle"
+        }
+      },
+      "connections": {
+        "heading": "Bağlantılar",
+        "discord": "Discord",
+        "google": "Google",
+        "connected": "Bağlı",
+        "connect": "Bağla",
+        "disconnect": "Bağlantıyı kes",
+        "locked": "Bu, oturum açmanın tek yolu.",
+        "empty": "Henüz bağlı hesap yok."
+      },
+      "manage": {
+        "heading": "Hesabını yönet",
+        "changeHandle": "Kullanıcı adını değiştir",
+        "changeName": "Görünen adı değiştir",
+        "manageNicknames": "Takma adları yönet",
+        "accountSettings": "Hesap ayarları"
+      },
+      "form": {
+        "handleNew": "Yeni kullanıcı adı",
+        "handleSave": "Kullanıcı adını kaydet",
+        "nameNew": "Yeni görünen ad",
+        "nicknamesNew": "Takma adlar (virgülle ayrılmış)",
+        "save": "Kaydet",
+        "saving": "Kaydediliyor…",
+        "saved": "Kaydedildi"
+      },
+      "errors": {
+        "taken": "Bu kullanıcı adı zaten alınmış.",
+        "invalid": "Bu kullanıcı adı geçerli değil."
+      },
+      "general": {
+        "heading": "Genel bilgiler",
+        "nicknames": "Takma adlar",
+        "openNicknameManager": "Takma ad yöneticisini aç"
+      },
+      "language": {
+        "heading": "Dil",
+        "label": "Görüntüleme dili"
+      },
+      "discordSettings": {
+        "heading": "Discord ayarları",
+        "hint": "Botumuzun canlı durumunu görebilmesi için Discord sunucumuza katıl.",
+        "cta": "Hemen katıl",
+        "alreadyInServer": "Zaten sunucudasın",
+        "joining": "Katılınıyor…",
+        "joined": "Katıldın ✓"
+      },
+      "security": {
+        "heading": "Güvenlik"
+      },
+      "nicknameManager": {
+        "title": "Takma ad yöneticisi",
+        "close": "Kapat",
+        "hint": "En fazla {max} takma ad, her biri {len} karakter.",
+        "rowPlaceholder": "Takma ad",
+        "remove": "Sil",
+        "add": "Takma ad ekle",
+        "cancel": "Vazgeç",
+        "save": "Kaydet",
+        "saving": "Kaydediliyor…",
+        "saved": "Kaydedildi",
+        "saveError": "Kaydedilemedi."
+      },
+      "email": {
+        "heading": "E-posta",
+        "none": "E-posta tanımlı değil",
+        "reveal": "Göster",
+        "hide": "Gizle",
+        "verified": "Doğrulanmış",
+        "notVerified": "Doğrulanmamış",
+        "change": "Değiştir",
+        "newEmail": "Yeni e-posta",
+        "sendCode": "Kod gönder",
+        "working": "İşleniyor…",
+        "emailSent": "Yeni adrese 6 haneli bir onay kodu e-postası gönderdik. Aşağıya girin.",
+        "emailFailed": "Onay e-postası gönderilemedi. Adresi kontrol edin veya birazdan tekrar deneyin.",
+        "enterCode": "Onay kodu",
+        "confirm": "Onayla",
+        "taken": "Bu e-posta zaten kullanımda.",
+        "invalid": "Bu e-posta geçerli değil.",
+        "invalidToken": "Bu kod geçersiz veya süresi doldu.",
+        "error": "Bir şeyler ters gitti."
+      },
+      "twoFactor": {
+        "heading": "İki faktörlü doğrulama",
+        "statusOn": "Açık — oturum açarken doğrulayıcı kodun isteniyor.",
+        "statusOff": "Hesabını güvende tutmak için ikinci bir adım ekle.",
+        "enable": "Aç",
+        "working": "İşleniyor…",
+        "scanHint": "Bu QR kodu doğrulaman uygulamasıyla tara veya anahtarı elle gir.",
+        "scanAlt": "İki faktörlü kurulum QR kodu",
+        "secretLabel": "Manuel kurulum anahtarı",
+        "codeLabel": "6 haneli kodu gir",
+        "confirm": "Onayla",
+        "cancel": "Vazgeç",
+        "invalid": "Bu kod geçerli değil.",
+        "error": "Bir şeyler ters gitti.",
+        "backupTitle": "Yedek kodların",
+        "backupHint": "Bunları güvenli bir yerde sakla — doğrulamanı kaybedersen her biri bir kez çalışır. Tekrar gösterilmeyecek.",
+        "done": "Tamam",
+        "disableCodeLabel": "İki faktörlü doğrulamayı kapatmak için güncel bir kod gir",
+        "disableCodePlaceholder": "Kod veya yedek",
+        "disable": "Kapat"
+      },
+      "sessions": {
+        "heading": "Aktif oturumlar",
+        "hint": "Hesabına giriş yapan cihazlar.",
+        "thisDevice": "Bu cihaz",
+        "unknown": "Bilinmeyen cihaz",
+        "lastSeen": "Son görülme",
+        "signOut": "Oturumu kapat",
+        "signOutOthers": "Diğerlerini kapat",
+        "signOutAll": "Her yerde kapat",
+        "empty": "Başka aktif oturum yok."
+      }
+    },
+    "shortcuts": {
+      "title": "Geri kalan her şey bir tık ötede",
+      "hint": "Herkese açık sayfan bu bölümlerden oluşur.",
+      "linksGo": "Hesap bağla ve bağlantı ekle",
+      "badgesGo": "Neler kazandığını gör",
+      "customizeGo": "Biyografi, vurgu rengi, avatar, arka plan",
+      "templatesGo": "Animasyonlu arka plan seç",
+      "filesGo": "Dosya yükle ve yönet",
+      "badgesTitle": "Kazanılan rozetler",
+      "open": "Aç"
+    },
+    "stats": {
+      "views": "Profil görüntülenme",
+      "links": "Bağlantı",
+      "files": "Dosya",
+      "plan": "Plan"
+    },
+    "sections": {
+      "profile": "Profil",
+      "appearance": "Görünüm",
+      "links": "Bağlantılar",
+      "socials": "Bağlı hesaplar",
+      "files": "Dosya barındırma"
+    },
+    "actions": {
+      "save": "Kaydet",
+      "add": "Ekle",
+      "connect": "Bağla",
+      "remove": "Kaldır",
+      "delete": "Sil",
+      "upload": "Yükle",
+      "saving": "Kaydediliyor…",
+      "saved": "Kaydedildi ✓",
+      "deleted": "Silindi"
+    },
+    "fields": {
+      "bio": "Biyografi",
+      "bioPlaceholder": "İnsanlara kendini anlat…",
+      "accent": "Vurgu rengi",
+      "label": "Etiket",
+      "urlPlaceholder": "https://…",
+      "profileUrl": "Profil URL'si",
+      "platform": "Platform",
+      "username": "@kullaniciadi",
+      "private": "Özel",
+      "optional": "isteğe bağlı",
+      "avatarUrl": "Avatar URL'si",
+      "backgroundUrl": "Arka plan GIF / görsel URL'si",
+      "backgroundHint": "Bir GIF, görsel veya Tenor/Giphy paylaşım linki yapıştır — paylaşım linkleri otomatik çevrilir. Animasyonlu hazır stil için boş bırak.",
+      "animatedPreset": "Animasyonlu hazır stil",
+      "usePreset": "Animasyonlu hazır stili kullan",
+      "resolvedNote": "İpucu: Tenor/Giphy sayfa linkleri otomatik olarak GIF'e çevrilir.",
+      "customTemplateCta": "Kendi videonu istiyor musun? Hemen aşağıdaki Kendi şablonun bölümünü kullan."
+    },
+    "empty": {
+      "links": "Henüz bağlantı yok.",
+      "socials": "Henüz hesap bağlanmadı.",
+      "files": "Henüz dosya yüklenmedi."
+    },
+    "errors": {
+      "invalid": "Alanları kontrol et — geçersiz bir şey var.",
+      "unauthorized": "Oturumun sona erdi. Lütfen tekrar giriş yap.",
+      "badmedia": "Bu bağlantı doğrudan GIF/görsel değil ve çözülemedi. Doğrudan bir media linki yapıştır (ör. .gif URL'si).",
+      "forbidden": "Rozetleri yalnızca riasly yöneticleri verebilir ya da kaldırabilir.",
+      "lastauth": "Bu, hesabındaki tek giriş yöntemi. Kaldırmadan önce bir şifre belirle ya da başka bir sağlayıcı bağla.",
+      "quota": "Depolama hakkın doldu. Birkaç dosya sil ya da sınırsız barındırma için Premium'a geç."
+    },
+    "linksPage": {
+      "title": "Linkler",
+      "subtitle": "Sahip olduğun hesapları bağla ve sayfana istediğin bağlantıyı ekle.",
+      "gridHint": "Bağlamak için bir platform seç — her platforma tek hesap.",
+      "gridTitle": "Platformlar",
+      "connected": "Bağlı",
+      "notConnected": "Bağlı değil",
+      "edit": "Değiştir",
+      "replace": "Değişiklikleri kaydet",
+      "customTile": "Özel bağlantı",
+      "customTitle": "Özel bağlantılar",
+      "listTitle": "Bağlı hesaplar",
+      "socialList": "Bunlar biyografinin altında simge olarak görünür.",
+      "noneYet": "Henüz bağlı hesap yok — başlamak için bir platform seç.",
+      "connectedCount": "{count}/{total} platform bağlı",
+      "openForm": "{platform} bağla",
+      "removeOne": "Kaldır",
+      "discordManagedElsewhere": "Discord hesabın üzerinden bağlanır — Özelleştir sayfasından yönet."
+    },
+    "widgetsPage": {
+      "title": "Widget'lar ve sekmeler",
+      "subtitle": "Sayfana canlı gömüler ekle ve yanına ek sekmeler aç.",
+      "typeTitle": "Bir widget seç",
+      "types": {
+        "youtube": "YouTube",
+        "spotify": "Spotify",
+        "soundcloud": "SoundCloud",
+        "twitch": "Twitch",
+        "discord": "Discord",
+        "text": "Metin notu",
+        "image": "Görsel",
+        "link": "Bağlantı butonu",
+        "discord_status": "Discord Durumu",
+        "discord_server": "Discord Sunucusu",
+        "telegram": "Telegram",
+        "roblox": "Roblox",
+        "github": "GitHub",
+        "cs": "Counter-Strike",
+        "lastfm": "Last.fm",
+        "weather": "Hava Durumu",
+        "timezone": "Saat Dilimi"
+      },
+      "hint": {
+        "youtube": "Bir video veya çalma listesi bağlantısı yapıştır (youtube.com veya youtu.be).",
+        "spotify": "Bir şarkı, albüm, çalma listesi veya sanatçı bağlantısı yapıştır (open.spotify.com).",
+        "soundcloud": "Bir şarkı bağlantısı yapıştır (soundcloud.com/kullanıcı/başlık).",
+        "twitch": "Bir kanal bağlantısı yapıştır (twitch.tv/kanadin).",
+        "discord": "Bir davet bağlantısı yapıştır (discord.gg/kod veya discord.com/invite/kod).",
+        "text": "Düz metin olarak gösterilen kısa bir satır — biçimlendirme yok, en fazla 280 karakter.",
+        "image": "Doğrudan bir görsel bağlantısı veya yüklediğin bir görsele link yapıştır.",
+        "link": "Herhangi bir web adresi, tam genişlikte bir buton olarak gösterilir.",
+        "discord_status": "Canlı Discord durum kartını göster. Önce bu sayfada Discord bağla.",
+        "discord_server": "Bir davet bağlantısı yapıştır (discord.gg/kod veya discord.com/invite/kod).",
+        "telegram": "t.me bağlantını veya kullanıcı adını yapıştır (t.me/kullaniciadin).",
+        "roblox": "Roblox profil bağlantını yapıştır (roblox.com/users/id).",
+        "github": "GitHub profil bağlantını yapıştır (github.com/kullaniciadin).",
+        "cs": "Steam profil bağlantını yapıştır (steamcommunity.com/id/…).",
+        "lastfm": "Last.fm profil bağlantını yapıştır (last.fm/user/kullaniciadin).",
+        "weather": "Bir şehir etiketi göster. Bir şehir adı yaz — canlı hava durumu değil.",
+        "timezone": "Seçtiğin saat diliminde geçerli saati göster."
+      },
+      "form": {
+        "label": "Etiket (isteğe bağlı)",
+        "source": "Kaynak bağlantısı",
+        "text": "Notun",
+        "homeTab": "Ana sayfa",
+        "add": "Widget ekle",
+        "adding": "Ekleniyor…"
+      },
+      "list": {
+        "title": "Ana sayfadaki widget'lar",
+        "empty": "Henüz widget yok — eklemek için Ayarlar'ı aç."
+      },
+      "saved": "Widget kaydedildi ✓",
+      "remove": "Kaldır",
+      "limitFree": "Ücretsiz plan en fazla {max} widget'e izin verir.",
+      "errors": {
+        "invalid": "Bu bağlantı seçilen widget için geçerli görünmüyor.",
+        "limit": "Ücretsiz plan sınırına ulaştın. Daha fazlası için Premium'a geç.",
+        "missing": "Bu sekme artık yok.",
+        "unauthorized": "Oturumun düştü. Lütfen tekrar giriş yap.",
+        "premium": "Bu widget Premium ile kullanılabilir."
+      },
+      "pages": {
+        "title": "Ek sekmeler",
+        "add": "Sekme ekle",
+        "titleField": "Sekme adı",
+        "slug": "url-kısayol",
+        "delete": "Sekmeyi sil",
+        "empty": "Henüz ek sekme yok. İkinci bir sayfa açmak için bir tane ekle.",
+        "saved": "Sekme kaydedildi ✓",
+        "limitFree": "Ücretsiz plan en fazla {max} ek sekmeye izin verir."
+      }
+    },
+    "widgetModal": {
+      "title": "Profil Widget'ı",
+      "subtitle": "Widget'ları aç/kapat ve her birini yapılandır.",
+      "activeCount": "{count, plural, one {# aktif widget} other {# aktif widget}}",
+      "open": "Ayarlar",
+      "enabled": "Etkin",
+      "disabled": "Devre dışı",
+      "chooseType": "Bir widget seç",
+      "premiumLocked": "Bu widget Premium ile kullanılabilir.",
+      "saved": "Kaydedildi ✓",
+      "saving": "Kaydediliyor…",
+      "apply": "Uygula",
+      "cancel": "İptal",
+      "showBadges": "Discord rozetlerini göster",
+      "idleText": "Boştayken metin",
+      "idlePlaceholder": "Hiçbir şey oynatılmazken gösterilecek metin",
+      "city": "Şehir",
+      "cityPlaceholder": "örn. İstanbul",
+      "zone": "Saat dilimi",
+      "sourceLabel": "Kaynak bağlantısı",
+      "noteLabel": "Notun",
+      "targetPage": "Eklenecek yer"
+    },
+    "customizePage": {
+      "title": "Özelleştir",
+      "subtitle": "Ziyaretçilerin profilinde gördüğü her şey burada başlar.",
+      "appearanceHint": "Biyografi, vurgu rengi ve arka plan linki — avatar aşağıda kendi kartında.",
+      "uploadHint": "Kendi videonu, avatarını, müziğini ve imlecini getir.",
+      "templatesCta": "Bizden birini istersen animasyonlu şablon seç",
+      "uploadHere": "Kendi videonu ya da GIF'ini istiyor musun? Özelleştir bölümünden yükle",
+      "sections": {
+        "fileUploader": "Dosya yükleyici",
+        "general": "Genel özelleştirme",
+        "colors": "Renk özelleştirme",
+        "other": "Diğer özelleştirmeler"
+      },
+      "fields": {
+        "bio": "Açıklama",
+        "bioPlaceholder": "Kendinden biraz bahset…",
+        "panel": "Profil opaklığı ve bulanıklığı",
+        "opacity": "Opaklık",
+        "blur": "Bulanıklık",
+        "bgEffect": "Arka plan efekti",
+        "usernameEffect": "Kullanıcı adı efekti",
+        "location": "Konum",
+        "locationPlaceholder": "İstanbul, Türkiye",
+        "glitterName": "Adda ışıltı",
+        "glitterSocials": "Sosyallerde ışıltı",
+        "glitterBadges": "Rozetlerde ışıltı",
+        "accent": "Vurgu",
+        "textColor": "Metin",
+        "bgColor": "Arka plan",
+        "iconColor": "Sosyal ikon rengi",
+        "iconColorHint": "Profilindeki sosyal ikonları ve parlamalarını renklendirir.",
+        "effectColor": "Efekt",
+        "effectColor2": "Efekt ikincil",
+        "effectColor3": "Efekt üçüncül",
+        "gradient": "Profil gradyanı",
+        "monochrome": "Tek renkli ikonlar",
+        "animatedTitle": "Animasyonlu başlık",
+        "boxColors": "Kutu renkleri",
+        "soundControl": "Ses kontrolü",
+        "discordDecoration": "Discord avatar süsü",
+        "profileAlign": "Profil konumu"
+      },
+      "alignments": {
+        "left": "Sol",
+        "center": "Orta",
+        "right": "Sağ"
+      },
+      "hints": {
+        "discordNotConnected": "Bunu açmak için yukarıdan Discord'u bağla.",
+        "needSound": "Önce dosya yükleyicide bir ses yükle."
+      },
+      "discord": {
+        "title": "Discord",
+        "connect": "Discord Bağla",
+        "connecting": "Discord açılıyor…",
+        "connected": "Bağlı",
+        "disconnect": "Yetkiyi kaldır",
+        "disconnected": "Discord bağlantısı kaldırıldı.",
+        "consentNote": "Discord'un kendi izin ekranı açılacak; uygulamanın neleri görebileceği — adın, avatarın, afişin, rozetlerin ve senin adına sunuculara katılabileceği — orada yazıyor. Artık hiçbir şey elle girilmiyor.",
+        "lanyardNote": "Canlı “Oynuyor …” satırı kendi Discord botumuzdan gelir; güncel kalması için sunucumuzda üye olarak kalman yeterli.",
+        "inGuild": "Discord sunucumuzdasın — canlı etkinliğin profilinde görünüyor.",
+        "notInGuild": "Discord sunucumuzda görünmüyorsun, bu yüzden bot ne oynadığını göremiyor.",
+        "rejoin": "Tekrar katıl",
+        "rejoined": "Sunucuya yeniden katıldın.",
+        "rejoinFailed": "Discord katılmayı reddetti. Botta büyük ihtimalle Davet Oluşturma izni yok, ya da bu bağlantı o izinden önce verilmiş.",
+        "scopeOutdated": "Bu bağlantı, sunucuya katılma izni yokken verildi. Bağlantıyı kaldır, sonra yeniden bağlanarak izni ver.",
+        "botNotConfigured": "Canlı “Oynuyor …” satırı Lanyard'dan gelir; görünmesi için Lanyard'ın Discord sunucusuna üye olman gerekir.",
+        "needConnection": "Profilinde avatarını, rozetlerini ve canlı etkinliğini göstermek için Discord'u bağla.",
+        "lastAuth": "Discord, bu hesaptaki tek giriş yöntemi. Önce bir şifre belirle ya da başka bir sağlayıcı bağla."
+      },
+      "effects": {
+        "template": "Şablon varsayılanı",
+        "none": "Yok",
+        "particles": "Parçacıklar",
+        "snow": "Kar taneleri",
+        "aurora": "Aurora",
+        "glitch": "Glitch",
+        "scanlines": "Tarama çizgileri",
+        "sheen": "Parıltı",
+        "leak": "Işık sızması",
+        "vignette": "Vinyet",
+        "grain": "Taneler",
+        "speed": "Hız çizgileri"
+      },
+      "usernameEffects": {
+        "none": "Yok",
+        "glow": "Işıltı",
+        "neon": "Neon",
+        "gradient": "Gradyan",
+        "shimmer": "Parıltı geçişi",
+        "rainbow": "Gökkuşağı",
+        "typewriter": "Daktilo",
+        "glitch": "Glitch",
+        "flicker": "Titreşim",
+        "glowpulse": "Nabız ışığı"
+      },
+      "widget": {
+        "title": "Profil Widget'ı",
+        "subtitle": "Profilindeki Discord durum kartını yapılandır.",
+        "enable": "Durum kartını göster",
+        "showBadges": "Discord rozetlerini göster",
+        "idleText": "Boş metin",
+        "idlePlaceholder": "örn. Birazdan dönüyorum",
+        "save": "Widget'ı kaydet",
+        "saving": "Kaydediliyor…",
+        "saved": "Widget kaydedildi"
+      },
+      "effectsPicker": {
+        "usernameTitle": "Kullanıcı adı efektleri",
+        "bgTitle": "Arka plan efektleri",
+        "choose": "Seç",
+        "close": "Kapat",
+        "cancel": "İptal",
+        "save": "Kaydet",
+        "previewName": "kullaniciadi",
+        "paletteTitle": "Efekt renkleri"
+      },
+      "effectPresets": {
+        "violet": "Menekşe",
+        "sunset": "Gün batımı",
+        "emerald": "Zümrüt",
+        "ruby": "Yakut",
+        "gold": "Altın",
+        "ice": "Buz",
+        "candy": "Şeker",
+        "neon": "Neon",
+        "mono": "Tek renk"
+      },
+      "saveBar": {
+        "unsaved": "Kaydedilmemiş değişiklikler var",
+        "saved": "Tüm değişiklikler kaydedildi",
+        "reset": "Sıfırla",
+        "save": "Değişiklikleri kaydet",
+        "saving": "Kaydediliyor…"
+      },
+      "sound": {
+        "title": "Ses",
+        "subtitle": "Ziyaretçi profile girdiğinde çalmaya başlayan bir parça — istediği an sesi kısabilir.",
+        "previewFallback": "Henüz ses yüklenmedi.",
+        "hint": "MP3, M4A, OGG, WAV veya WebM ses · en fazla {mb} MB. Müzik profile girildiğinde başlar; hoparlör düğmesi sesi kısar veya açar.",
+        "upload": "Yükle ve uygula",
+        "uploading": "Yükleniyor…",
+        "applying": "Uygulanıyor…",
+        "remove": "Sesi kaldır",
+        "removing": "Kaldırılıyor…",
+        "noFile": "Önce bir ses dosyası seç.",
+        "myFiles": "Yüklenmiş bir dosyayı yeniden kullan",
+        "inUse": "Kullanımda",
+        "use": "Kullan",
+        "rangeTitle": "Yalnızca bir bölümü çal",
+        "rangeHint": "Başlangıç ve bitiş saniyeleri. Açık uçlu bırakmak için bir alanı boş bırak.",
+        "rangeStart": "Başlangıç (sn)",
+        "rangeEnd": "Bitiş (sn)",
+        "rangeApply": "Aralığı uygula",
+        "rangeReset": "Tüm parça",
+        "errors": {
+          "unsupported": "Bu dosya türü ses olarak kullanılamaz. MP3, M4A, OGG, WAV veya WebM ses kullan.",
+          "tooLarge": "Ses çok büyük — sınır {mb} MB. Daha küçük bir dosya seç.",
+          "missing": "Bu yüklenmiş dosyayı artık bulamıyoruz. Lütfen yeniden yükle.",
+          "upload": "Yükleme başarısız. Lütfen tekrar dene.",
+          "unauthorized": "Oturumun doldu. Lütfen yeniden giriş yap.",
+          "invalid": "Dosyayı kontrol et — bir şey geçersiz görünüyor."
+        }
+      },
+      "cursor": {
+        "title": "Özel imleç",
+        "subtitle": "Profilinde imleç olacak bir PNG.",
+        "previewFallback": "İmleç yok",
+        "hint": "Yalnızca PNG · en fazla {mb} MB. Biraz şeffaf kenar boşluğu olan küçük bir görsel en iyisidir.",
+        "upload": "Yükle ve uygula",
+        "uploading": "Yükleniyor…",
+        "applying": "Uygulanıyor…",
+        "remove": "İmleci kaldır",
+        "removing": "Kaldırılıyor…",
+        "noFile": "Önce bir PNG dosyası seç.",
+        "myFiles": "Yüklenmiş bir dosyayı yeniden kullan",
+        "inUse": "Kullanımda",
+        "use": "Kullan",
+        "errors": {
+          "unsupported": "İmleç bir PNG görseli olmalı.",
+          "tooLarge": "İmleç çok büyük — sınır {mb} MB. Daha küçük bir dosya seç.",
+          "missing": "Bu yüklenmiş dosyayı artık bulamıyoruz. Lütfen yeniden yükle.",
+          "upload": "Yükleme başarısız. Lütfen tekrar dene.",
+          "unauthorized": "Oturumun doldu. Lütfen yeniden giriş yap.",
+          "invalid": "Dosyayı kontrol et — bir şey geçersiz görünüyor."
+        }
+      }
+    },
+    "avatarCard": {
+      "title": "Avatar",
+      "subtitle": "Kare bir GIF veya kısa klip en iyisi — daire içinde gösterilir.",
+      "upload": "Yükle ve uygula",
+      "uploading": "Yükleniyor…",
+      "applying": "Uygulanıyor…",
+      "remove": "Avatarı kaldır",
+      "removing": "Kaldırılıyor…",
+      "noFile": "Önce bir resim veya video dosyası seç.",
+      "myFiles": "Yüklediğin bir dosyayı yeniden kullan",
+      "useAsAvatar": "Avatar yap",
+      "inUse": "Kullanımda",
+      "empty": "Henüz yeniden kullanılacak bir şey yok — yüklemelerin burada görünecek.",
+      "previewFallback": "@",
+      "hint": "PNG, JPG, GIF, WebP veya döngüde MP4/WebM · en fazla {mb} MB · sessizce, sonsuza kadar oynar. Yüklendiği gibi sunulur, yeniden kodlanmaz.",
+      "errors": {
+        "unsupported": "Bu dosya türü avatar olarak kullanılamaz. PNG, JPG, GIF, WebP, MP4, WebM veya MOV seç.",
+        "tooLarge": "Avatar çok büyük — sınır {mb} MB. Daha küçük bir dosya seç.",
+        "missing": "Yüklediğin dosyayı artık bulamadık. Lütfen yeniden yükle.",
+        "upload": "Yükleme başarısız. Lütfen tekrar dene.",
+        "unauthorized": "Oturumun sona erdi. Lütfen yeniden giriş yap.",
+        "invalid": "Dosyayı kontrol et — geçersiz görünen bir şey var."
+      }
+    },
+    "filesPage": {
+      "title": "Dosyalar",
+      "subtitle": "İstediğini yükle, riasly kullanıcı adın arkasında paylaş."
+    }
+  },
+  "badges": {
+    "title": "Rozetler",
+    "subtitle": "riasly üzerinde gerçekten yaptıklarınla kazanılır, satın alınmaz.",
+    "earned": "Kazanılan",
+    "locked": "Kilitli",
+    "earnedCount": "{total} rozetten {earned} tanesi kazanıldı",
+    "progress": "{current} / {target}",
+    "noEarned": "Henüz rozet yok — en hızlısı bir biyografi yazmak.",
+    "noLocked": "Tüm rozetler zaten senin. Devam et.",
+    "hint": "Rozetler profilinde bir şey değiştirdiğin anda yenilenir.",
+    "keepForever": "Kazanılan rozet kalır — kaynağı sonradan değiştirsen bile silinmez.",
+    "color": "Rozet rengi",
+    "colorReset": "Sıfırla",
+    "colorSaved": "Rozet rengi kaydedildi.",
+    "showMore": "+{n} tane daha",
+    "showLess": "Daha az göster",
+    "source": {
+      "auto": "Otomatik",
+      "admin": "Ekip tarafında"
+    },
+    "admin": {
+      "title": "Yönetici: rozet ver ya da kaldır",
+      "handle": "Kullanıcı adı",
+      "placeholder": "kullanıcı adı, slash olmadan",
+      "badge": "Rozet",
+      "grant": "Ver",
+      "revoke": "Kaldır",
+      "done": "Güncellendi",
+      "forbidden": "Hesabın yönetici listesinde değil.",
+      "note": "Kaldırma, rozeti o hesap için kalıcı olarak siler."
+    },
+    "items": {
+      "early": {
+        "name": "İlk Gün",
+        "desc": "riasly üzerindeki ilk {n} hesap için."
+      },
+      "veteran": {
+        "name": "Gazi",
+        "desc": "En az {n} günlük hesaplar için."
+      },
+      "complete": {
+        "name": "Tam Profil",
+        "desc": "Biyografi, avatar, bağlı hesap ve bağlantı — {n} alanın hepsi dolu."
+      },
+      "collector": {
+        "name": "Bağlantı Ustası",
+        "desc": "{n} farklı platform bağla."
+      },
+      "linker": {
+        "name": "Bağlantı Paketi",
+        "desc": "Sayfanda {n} bağlantı olsun."
+      },
+      "stylist": {
+        "name": "Stil Sahibi",
+        "desc": "Vurgu rengini kendin seç."
+      },
+      "curator": {
+        "name": "Küratör",
+        "desc": "Hazır animasyonlu şablonlarımızdan birini uygula."
+      },
+      "ownbackground": {
+        "name": "Kendi Arka Planın",
+        "desc": "Arka plan olarak kendi yüklediğin videoyı ya da GIF kullan."
+      },
+      "uploader": {
+        "name": "Yayıncı",
+        "desc": "En az {n} dosyayı herkese açık yayınla."
+      },
+      "views1k": {
+        "name": "1B Görüntülenme",
+        "desc": "Profilin {n} kez görüntülensin."
+      },
+      "views10k": {
+        "name": "10B Kulübü",
+        "desc": "Profilin {n} kez görüntülensin."
+      },
+      "downloads100": {
+        "name": "Paylaşılan",
+        "desc": "Dosyaların {n} kez indirilsin."
+      },
+      "top20": {
+        "name": "Listede",
+        "desc": "Sıralama listesinde ilk {n} arasına gir."
+      },
+      "redeemer": {
+        "name": "İçeriden",
+        "desc": "Bir riasly kodu kullan."
+      }
+    }
+  }
+}

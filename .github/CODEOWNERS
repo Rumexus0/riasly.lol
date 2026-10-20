@@ -1,0 +1,20 @@
+# riasly — code owners. Replace `@your-github-handle` with the real owner (or an
+# org team) before relying on branch protection's "require review from CODEOWNERS";
+# an unresolvable handle makes GitHub skip the owner requirement rather than error.
+#
+# The whole repo has one owner today; the security-sensitive subtrees are listed
+# explicitly so a future split still routes uploads/auth/handle changes to someone
+# who knows the invariants encoded in tests/ and lib/storage.ts.
+
+* @your-github-handle
+
+# User bytes, quota and the two authenticated read paths.
+/lib/storage.ts @your-github-handle
+/app/api/upload/ @your-github-handle
+/app/api/files/ @your-github-handle
+/app/api/media/ @your-github-handle
+
+# Session/auth boundaries and the handle namespace that gates public profiles.
+/lib/auth-session.ts @your-github-handle
+/lib/handle.ts @your-github-handle
+/app/actions/auth.ts @your-github-handle
